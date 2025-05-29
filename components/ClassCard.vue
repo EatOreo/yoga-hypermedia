@@ -20,7 +20,8 @@ const shouldShow = computed(() => {
 <template>
   <div
     v-if="shouldShow"
-    class="flex flex-col gap-3 pb-3"
+    class="flex flex-col gap-3 pb-3 cursor-pointer"
+    @click="$router.push(`/classes/${encodeURIComponent(title)}`)"
   >
     <div
       class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
