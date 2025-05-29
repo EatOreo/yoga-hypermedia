@@ -20,7 +20,7 @@ useHead({
 </script>
 
 <style>
-html {
+html, body{
   font-family: 'Kavivanar', sans-serif;
 }
 </style>
