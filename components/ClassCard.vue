@@ -10,7 +10,7 @@ defineProps({
   <div class="flex flex-col gap-3 pb-3">
     <div
       class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      :style="`background-image:url('${image}')`"
+      :style="`background-image:url('https://eatoreo.github.io/yoga-hypermedia${image}')`"
     ></div>
     <div>
       <p class="text-[#2A9D8A] text-base font-medium leading-normal">{{ title }}</p>
