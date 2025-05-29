@@ -14,7 +14,7 @@
         <router-link class="text-[#213315] text-md font-medium" to="events">Events</router-link>
         <router-link class="text-[#213315] text-md font-medium" to="teachers">Teachers</router-link>
         <router-link class="text-[#213315] text-md font-medium" to="blog">Blog</router-link>
-        <router-link class="text-[#213315] text-md font-medium" to="about-us">About Us</router-link>
+        <router-link class="text-[#213315] text-md font-medium" to="aboutus">About Us</router-link>
       </div>
     </div>
   </header>
