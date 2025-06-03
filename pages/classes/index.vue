@@ -33,7 +33,7 @@ interface ClassItem {
 const classes = ref<ClassItem[]>([])
 
 onMounted(async () => {
-  const res = await fetch('/api/classes.json')
+  const res = await fetch('/yoga-hypermedia/api/classes.json')
   if (res.ok) {
     const data = await res.json() as ClassItem[]
     console.log('Fetched classes:', data)
