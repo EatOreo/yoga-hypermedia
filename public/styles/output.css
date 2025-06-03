@@ -30,6 +30,10 @@
     --default-mono-font-family: var(--font-mono);
     --color-dark: #213315;
     --color-lgreen: #A4AC86;
+    --color-lgrey: #E7E4DA;
+    --color-lblue: #2A9D8A;
+    --color-lorange: #F0A436;
+    --color-bright: #FFFDF5;
   }
 }
 @layer base {
@@ -335,17 +339,23 @@
   .border-\[\#dbdbdb\] {
     border-color: #dbdbdb;
   }
+  .border-bright {
+    border-color: var(--color-bright);
+  }
+  .border-lgrey {
+    border-color: var(--color-lgrey);
+  }
   .border-t-\[\#dbdbdb\] {
     border-top-color: #dbdbdb;
   }
-  .bg-\[\#E7E4DA\] {
-    background-color: #E7E4DA;
-  }
-  .bg-\[\#FFFDF5\] {
-    background-color: #FFFDF5;
+  .bg-bright {
+    background-color: var(--color-bright);
   }
   .bg-lgreen {
     background-color: var(--color-lgreen);
+  }
+  .bg-lgrey {
+    background-color: var(--color-lgrey);
   }
   .bg-cover {
     background-size: cover;
@@ -450,17 +460,17 @@
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
   }
-  .text-\[\#2A9D8A\] {
-    color: #2A9D8A;
-  }
-  .text-\[\#F0A436\] {
-    color: #F0A436;
-  }
   .text-dark {
     color: var(--color-dark);
   }
+  .text-lblue {
+    color: var(--color-lblue);
+  }
   .text-lgreen {
     color: var(--color-lgreen);
+  }
+  .text-lorange {
+    color: var(--color-lorange);
   }
   .md\:grid-cols-3 {
     @media (width >= 48rem) {

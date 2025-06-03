@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full bg-[#E7E4DA] flex flex-col">
+  <div class="min-h-screen w-full bg-lgrey flex flex-col">
     <NuxtRouteAnnouncer />
     <Navbar />
     <NuxtPage class="flex-1" />

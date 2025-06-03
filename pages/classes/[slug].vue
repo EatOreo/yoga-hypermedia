@@ -8,7 +8,7 @@
     </div>
   </div>
     <div class="px-40 flex flex-1 justify-center pb-5">
-      <div class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-[#FFFDF5] rounded-2xl">
+      <div class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-bright rounded-2xl">
         <div class="flex flex-row px-4 pt-5 gap-8">
           <div class="flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4">
@@ -23,7 +23,7 @@
               poses for longer periods, emphasizing breath control and
               alignment. This class is suitable for all levels, from beginners to experienced practitioners.
             </p>
-            <h3 class="text-[#2A9D8A] mt-8 text-lg font-bold leading-tight px-4 pb-2 pt-4">Class
+            <h3 class="text-lblue mt-8 text-lg font-bold leading-tight px-4 pb-2 pt-4">Class
               Details</h3>
             <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
@@ -39,14 +39,14 @@
           </div>
           <div class="flex-1">
             <img src="/images/class-1.png" alt="Class Image" class="w-full rounded-xl object-cover my-4 max-h-64" />
-            <h3 class="text-[#2A9D8A] text-lg font-bold leading-tight px-4 pb-2 pt-5">Meet the
+            <h3 class="text-lblue text-lg font-bold leading-tight px-4 pb-2 pt-5">Meet the
               Teacher</h3>
-            <div class="flex items-center gap-4 bg-[#E7E4DA] px-4 min-h-[72px] py-2 mb-12 rounded-xl">
+            <div class="flex items-center gap-4 bg-lgrey px-4 min-h-[72px] py-2 mb-12 rounded-xl">
               <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
               style='background-image: url("https://api.dicebear.com/9.x/adventurer/svg?seed=Sarah");'>
               </div>
               <div class="flex flex-col justify-center">
-              <p class="text-[#F0A436] font-medium leading-normal line-clamp-1">Sarah Miller</p>
+              <p class="text-lorange font-medium leading-normal line-clamp-1">Sarah Miller</p>
               <p class="text-sm font-normal leading-normal line-clamp-2">Certified Yoga Instructor
               </p>
               </div>

@@ -28,8 +28,8 @@ const shouldShow = computed(() => {
       :style="`background-image:url('https://eatoreo.github.io/yoga-hypermedia${image}')`"
     ></div>
     <div>
-      <p class="text-[#2A9D8A] text-base font-medium leading-normal">{{ title }}</p>
-      <p class="text-[#F0A436] text-sm font-normal leading-normal">{{ subtitle }}</p>
+      <p class="text-lblue text-base font-medium leading-normal">{{ title }}</p>
+      <p class="text-lorange text-sm font-normal leading-normal">{{ subtitle }}</p>
     </div>
   </div>
 </template>
