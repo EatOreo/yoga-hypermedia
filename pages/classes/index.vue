@@ -19,25 +19,17 @@
 import { ref, onMounted } from 'vue'
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import type { ClassItem } from '~/types/class-item';
 
 const route = useRoute();
 const hashValue = computed(() => route.hash.replace('#', ''));
-
-interface ClassItem {
-  title: string
-  subtitle: string
-  intensity: string
-  image: string
-}
 
 const classes = ref<ClassItem[]>([])
 
 onMounted(async () => {
   const res = await fetch('/yoga-hypermedia/api/classes.json')
   if (res.ok) {
-    const data = await res.json() as ClassItem[]
-    console.log('Fetched classes:', data)
-    classes.value = data
+    classes.value = await res.json() as ClassItem[]
   }
 })
 </script>
