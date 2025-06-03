@@ -3,4 +3,6 @@ export interface ClassItem {
   subtitle: string
   intensity: string
   image: string
+  description: string
+  schedule: string
 }

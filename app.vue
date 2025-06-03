@@ -2,7 +2,7 @@
   <div class="min-h-screen w-full bg-lgrey flex flex-col">
     <NuxtRouteAnnouncer />
     <Navbar />
-    <NuxtPage class="flex-1" />
+    <NuxtPage />
     <Footer />
   </div>
 </template>
