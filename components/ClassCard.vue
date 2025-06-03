@@ -25,7 +25,7 @@ const shouldShow = computed(() => {
   >
     <div
       class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      :style="`background-image:url('/yoga-hypermedia/${image}')`"
+      :style="`background-image:url('${image}')`"
     ></div>
     <div>
       <p class="text-lblue text-base font-medium leading-normal">{{ title }}</p>
