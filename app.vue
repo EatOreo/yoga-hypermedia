@@ -11,7 +11,7 @@
 useHead({
   title: 'Yogaga',
   link: [
-    { rel: 'stylesheet', href: '/styles/output.css' },
+    { rel: 'stylesheet', href: '/yoga-hypermedia/styles/output.css' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Kavivanar:wght@400;700&display=swap' }
   ],
 })
