@@ -1,12 +1,9 @@
 <template>
   <div v-if="classItem">
-    <div class="flex justify-center">
-      <div class="flex flex-wrap gap-2 p-4 pt-5 w-full max-w-[960px]">
-        <router-link class="text-lgreen font-medium" to="/classes">Classes</router-link>
-        <span class="text-lgreen font-medium">/</span>
-        <span class="text-dark font-medium">{{ slug }}</span>
-      </div>
-    </div>
+    <BreadCrumb :items="[
+      {label: 'Classes', to: '/classes'},
+      {label: slug}
+    ]" />
     <div class="px-40 flex flex-1 justify-center pb-5">
       <div class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-bright rounded-2xl">
         <div class="flex flex-row px-4 pt-5 gap-8 pb-5">
