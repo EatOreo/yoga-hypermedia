@@ -11,7 +11,7 @@
 useHead({
   title: 'Yogaga',
   link: [
-    { rel: 'stylesheet', href: new URL('/styles/output.css', import.meta.url).pathname },
+    { rel: 'stylesheet', href: '/styles/output.css' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Kavivanar:wght@400;700&display=swap' }
   ],
 })

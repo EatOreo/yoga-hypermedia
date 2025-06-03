@@ -4,5 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
     preset: 'github_pages'
+  },
+  app: {
+    baseURL: '/yoga-hypermedia/', 
   }
 })
