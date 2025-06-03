@@ -7,41 +7,37 @@
       <h2 class="text-dark text-2xl leading-tight px-4 pb-3 pt-5">Find your flow</h2>
       <Selector />
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-4">
-        <ClassCard image="/yoga-hypermedia/images/class-1.png" title="Vinyasa"
-          subtitle="Flowing sequences synchronize movement with breath" intensity="intermediate" />
-        <ClassCard image="/yoga-hypermedia/images/class-2.png" title="Hatha"
-          subtitle="A slower-paced practice focused on breathing and alignment" intensity="beginner" />
-        <ClassCard image="/yoga-hypermedia/images/class-3.png" title="Meditation" subtitle="Cultivate mindfulness and self-awareness"
-          intensity="beginner" />
-        <ClassCard image="/yoga-hypermedia/images/class-4.png" title="Prenatal" subtitle="Prepare your body and mind for birth"
-          intensity="beginner" />
-        <ClassCard image="/yoga-hypermedia/images/class-5.png" title="Yin"
-          subtitle="Deep stretches held for several minutes to release tension" intensity="intermediate" />
-        <ClassCard image="/yoga-hypermedia/images/class-6.png" title="Restorative" subtitle="Relax and renew with supported postures"
-          intensity="beginner" />
-        <ClassCard image="/yoga-hypermedia/images/class-7.png" title="Ashtanga" subtitle="A dynamic and physically demanding practice"
-          intensity="advanced" />
-        <ClassCard image="/yoga-hypermedia/images/class-8.png" title="Yoga for beginners"
-          subtitle="Learn the basics and build a strong foundation" intensity="beginner" />
-        <ClassCard image="/yoga-hypermedia/images/class-9.png" title="Yoga for athletes"
-          subtitle="Enhance flexibility, mobility, and recovery" intensity="advanced" />
-        <ClassCard image="/yoga-hypermedia/images/class-10.png" title="Yoga for back pain"
-          subtitle="Alleviate discomfort and improve spinal health" intensity="beginner" />
-        <ClassCard image="/yoga-hypermedia/images/class-11.png" title="Yoga for stress relief"
-          subtitle="Calm your mind and soothe your nervous system" intensity="beginner" />
-        <ClassCard image="/yoga-hypermedia/images/class-12.png" title="Yoga for core strength"
-          subtitle="Tone your abdominal muscles and improve posture" intensity="intermediate" />
-        <ClassCard image="/yoga-hypermedia/images/class-13.png" title="Yoga for runners"
-          subtitle="Prevent injuries and enhance performance" intensity="intermediate" />
-        <ClassCard image="/yoga-hypermedia/images/class-14.png" title="Yoga for balance"
-          subtitle="Strengthen your stabilizing muscles and focus" intensity="beginner" />
+        <ClassCard v-for="classItem in classes.filter(c => !hashValue || c.intensity === hashValue)"
+          :key="classItem.title" :title="classItem.title" :subtitle="classItem.subtitle"
+          :intensity="classItem.intensity" :image="classItem.image" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref, onMounted } from 'vue'
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
+const hashValue = computed(() => route.hash.replace('#', ''));
+
+interface ClassItem {
+  title: string
+  subtitle: string
+  intensity: string
+  image: string
+}
+
+const classes = ref<ClassItem[]>([])
+
+onMounted(async () => {
+  const res = await fetch('/api/classes.json')
+  if (res.ok) {
+    const data = await res.json() as ClassItem[]
+    console.log('Fetched classes:', data)
+    classes.value = data
+  }
+})
 </script>
-
-<style></style>

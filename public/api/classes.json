@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Sunrise Flow",
+        "subtitle": "Energizing morning vinyasa",
+        "intensity": "beginner",
+        "image": "/yoga-hypermedia/images/class-1.png"
+    },
+    {
+        "title": "Gentle Hatha",
+        "subtitle": "Relaxing poses for all levels",
+        "intensity": "beginner",
+        "image": "/yoga-hypermedia/images/class-2.png"
+    },
+    {
+        "title": "Yin Yoga",
+        "subtitle": "Deep stretch and relaxation",
+        "intensity": "beginner",
+        "image": "/yoga-hypermedia/images/class-3.png"
+    },
+    {
+        "title": "Power Vinyasa",
+        "subtitle": "Dynamic flow for strength",
+        "intensity": "intermediate",
+        "image": "/yoga-hypermedia/images/class-4.png"
+    },
+    {
+        "title": "Core Strength",
+        "subtitle": "Focus on core stability",
+        "intensity": "intermediate",
+        "image": "/yoga-hypermedia/images/class-5.png"
+    },
+    {
+        "title": "Balance & Flexibility",
+        "subtitle": "Improve balance and mobility",
+        "intensity": "intermediate",
+        "image": "/yoga-hypermedia/images/class-6.png"
+    },
+    {
+        "title": "Hot Yoga",
+        "subtitle": "Heated room, challenging flow",
+        "intensity": "advanced",
+        "image": "/yoga-hypermedia/images/class-7.png"
+    },
+    {
+        "title": "Ashtanga Primary Series",
+        "subtitle": "Traditional sequence for strength",
+        "intensity": "advanced",
+        "image": "/yoga-hypermedia/images/class-8.png"
+    },
+    {
+        "title": "Inversions Workshop",
+        "subtitle": "Handstands and headstands",
+        "intensity": "advanced",
+        "image": "/yoga-hypermedia/images/class-9.png"
+    },
+    {
+        "title": "Restorative Yoga",
+        "subtitle": "Gentle, supported poses",
+        "intensity": "beginner",
+        "image": "/yoga-hypermedia/images/class-10.png"
+    },
+    {
+        "title": "Yoga Sculpt",
+        "subtitle": "Yoga with weights",
+        "intensity": "intermediate",
+        "image": "/yoga-hypermedia/images/class-11.png"
+    },
+    {
+        "title": "Prenatal Yoga",
+        "subtitle": "Safe practice for expecting mothers",
+        "intensity": "beginner",
+        "image": "/yoga-hypermedia/images/class-12.png"
+    },
+    {
+        "title": "Vinyasa Express",
+        "subtitle": "Quick, energizing flow",
+        "intensity": "intermediate",
+        "image": "/yoga-hypermedia/images/class-13.png"
+    },
+    {
+        "title": "Advanced Arm Balances",
+        "subtitle": "Challenging arm balance poses",
+        "intensity": "advanced",
+        "image": "/yoga-hypermedia/images/class-14.png"
+    }
+]

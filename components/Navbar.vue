@@ -3,7 +3,7 @@
     <router-link to="/">
       <div class="pl-10 flex items-center gap-4 text-dark">
         <div class="size-4">
-          <icon class="absolute left-16 top-2"/>
+          <icon class="absolute left-16 top-2" />
         </div>
         <h2 class="text-dark text-3xl">Yogaga </h2>
       </div>
