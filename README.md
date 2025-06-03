@@ -1,3 +1,6 @@
+```bash
+npx @tailwindcss/cli -i ./input.css -o ./public/styles/output.css --watch
+```
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

@@ -2,9 +2,9 @@
   <div>
   <div class="flex justify-center">
     <div class="flex flex-wrap gap-2 p-4 pt-5 w-full max-w-[960px]">
-      <router-link class="text-[#A4AC86] font-medium leading-normal" to="/classes">Classes</router-link>
-      <span class="text-[#A4AC86] font-medium leading-normal">/</span>
-      <span class="text-[#213315] font-medium leading-normal">{{ slug }}</span>
+      <router-link class="text-lgreen font-medium leading-normal" to="/classes">Classes</router-link>
+      <span class="text-lgreen font-medium leading-normal">/</span>
+      <span class="text-dark font-medium leading-normal">{{ slug }}</span>
     </div>
   </div>
     <div class="px-40 flex flex-1 justify-center pb-5">
@@ -13,12 +13,12 @@
           <div class="flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4">
               <div class="flex min-w-72 flex-col gap-3">
-                <p class="text-[#213315] tracking-light text-[32px] font-bold leading-tight">{{ slug }}</p>
-                <p class="text-[#A4AC86] text-sm font-normal leading-normal">A gentle, foundational practice for all
+                <p class="text-dark tracking-light text-[32px] font-bold leading-tight">{{ slug }}</p>
+                <p class="text-lgreen text-sm font-normal leading-normal">A gentle, foundational practice for all
                   levels.</p>
               </div>
             </div>
-            <p class="text-[#213315] font-normal leading-normal pb-3 pt-1 px-4">
+            <p class="text-dark font-normal leading-normal pb-3 pt-1 px-4">
               Hatha yoga is a classical Indian yoga system. It's a gentle, foundational practice that focuses on holding
               poses for longer periods, emphasizing breath control and
               alignment. This class is suitable for all levels, from beginners to experienced practitioners.
@@ -27,12 +27,12 @@
               Details</h3>
             <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
-                <p class="text-[#A4AC86] text-sm font-normal leading-normal">Intensity</p>
-                <p class="text-[#213315] text-sm font-normal leading-normal">Beginner</p>
+                <p class="text-lgreen text-sm font-normal leading-normal">Intensity</p>
+                <p class="text-dark text-sm font-normal leading-normal">Beginner</p>
               </div>
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
-                <p class="text-[#A4AC86] text-sm font-normal leading-normal">Schedule</p>
-                <p class="text-[#213315] text-sm font-normal leading-normal">Mondays &amp; Wednesdays, 6:00 PM - 7:15 PM
+                <p class="text-lgreen text-sm font-normal leading-normal">Schedule</p>
+                <p class="text-dark text-sm font-normal leading-normal">Mondays &amp; Wednesdays, 6:00 PM - 7:15 PM
                 </p>
               </div>
             </div>

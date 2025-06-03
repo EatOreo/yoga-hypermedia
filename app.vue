@@ -11,11 +11,9 @@
 useHead({
   title: 'Yogaga',
   link: [
+    { rel: 'stylesheet', href: '/styles/output.css' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Kavivanar:wght@400;700&display=swap' }
   ],
-  script: [
-    { src: 'https://cdn.tailwindcss.com?plugins=forms,container-queries' }
-  ]
 })
 </script>
 
