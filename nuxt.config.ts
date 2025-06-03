@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   nitro: {
-    preset: 'github_pages'
+    preset: 'github_pages',
+    baseURL: '/yoga-hypermedia/', 
   },
   app: {
     baseURL: '/yoga-hypermedia/', 
