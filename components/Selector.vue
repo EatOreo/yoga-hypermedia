@@ -1,40 +1,40 @@
 <template>
-  <div class="pb-3">
-    <div class="flex border-b border-[#dbdbdb] px-4 gap-8">
-      <a class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4"
-        :style="{ borderColor: hashValue === '' ? '#1c160d' : '#A4AC86'}" href="#">
-        <p class="text-sm" :style="{ color: hashValue === '' ? 'inherit' : '#A4AC86'}">
+    <div class="flex border-b border-[#dbdbdb] px-4 gap-8 pb-3">
+      <a class="flex flex-col items-center justify-center border-b-[3px] pb-3.5 pt-4"
+        :class="filterValue === '' ? 'border-dark' : 'border-lgreen'" @click.prevent="setFilter('')" href="?">
+        <p class="text-sm" :class="filterValue === '' ? 'text-dark' : 'text-lgreen'">
           All Classes
         </p>
       </a>
-      <a class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4"
-        :style="{ borderColor: hashValue === 'beginner' ? '#1c160d' : '#A4AC86'}" href="#beginner">
-        <p class="text-sm" :style="{ color: hashValue === 'beginner' ? 'inherit' : '#A4AC86'}">
+      <a class="flex flex-col items-center justify-center border-b-[3px] pb-3.5 pt-4"
+        :class="filterValue === 'beginner' ? 'border-dark' : 'border-lgreen'" @click.prevent="setFilter('beginner')" href="?filter=beginner">
+        <p class="text-sm" :class="filterValue === 'beginner' ? 'text-dark' : 'text-lgreen'">
           Beginner
         </p>
       </a>
-      <a class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4"
-        :style="{ borderColor: hashValue === 'intermediate' ? '#1c160d' : '#A4AC86'}" href="#intermediate">
-        <p class="text-sm" :style="{ color: hashValue === 'intermediate' ? 'inherit' : '#A4AC86'}">
+      <a class="flex flex-col items-center justify-center border-b-[3px] pb-3.5 pt-4"
+        :class="filterValue === 'intermediate' ? 'border-dark' : 'border-lgreen'" @click.prevent="setFilter('intermediate')" href="?filter=intermediate">
+        <p class="text-sm" :class="filterValue === 'intermediate' ? 'text-dark' : 'text-lgreen'">
           Intermediate
         </p>
       </a>
-      <a class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4"
-        :style="{ borderColor: hashValue === 'advanced' ? '#1c160d' : '#A4AC86'}" href="#advanced">
-        <p class="text-sm" :style="{ color: hashValue === 'advanced' ? 'inherit' : '#A4AC86'}">
+      <a class="flex flex-col items-center justify-center border-b-[3px] pb-3.5 pt-4"
+        :class="filterValue === 'advanced' ? 'border-dark' : 'border-lgreen'" @click.prevent="setFilter('advanced')" href="?filter=advanced">
+        <p class="text-sm" :class="filterValue === 'advanced' ? 'text-dark' : 'text-lgreen'">
           Advanced
         </p>
       </a>
     </div>
-  </div>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
-const hashValue = computed(() => route.hash.replace('#', ''));
-</script>
+const router = useRouter();
+const filterValue = computed(() => (route.query.filter as string) || '');
 
-<style></style>
+function setFilter(val: string) {
+  router.replace({ query: val ? { ...route.query, filter: val } : {} });
+}
+</script>

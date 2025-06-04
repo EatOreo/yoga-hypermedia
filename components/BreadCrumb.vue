@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <div class="px-4 flex flex-1 justify-center">
     <div class="flex flex-wrap gap-2 p-4 pt-5 w-full max-w-[960px]">
       <template v-for="(item, idx) in items" :key="idx">
         <router-link v-if="item.to" :to="item.to" class="text-lgreen font-medium">

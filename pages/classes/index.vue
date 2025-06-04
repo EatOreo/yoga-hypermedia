@@ -1,11 +1,11 @@
 <template>
-  <div class="flex justify-center">
+  <div class="hidden lg:flex justify-center">
     <img src="/images/Classes.svg" alt="Yoga Classes" class="h-64" />
   </div>
-  <Background>
+  <Background class="pt-4 lg:p-0">
     <Selector />
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-4">
-      <ClassCard v-for="classItem in classes.filter(c => !hashValue || c.intensity === hashValue)"
+      <ClassCard v-for="classItem in classes.filter(c => !filterValue || c.intensity === filterValue)"
         :key="classItem.title" :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity"
         :image="classItem.image" />
     </div>
@@ -13,13 +13,12 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
-import { computed } from 'vue';
+import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router';
 import type { ClassItem } from '~/types/class-item';
 
 const route = useRoute();
-const hashValue = computed(() => route.hash.replace('#', ''));
+const filterValue = computed(() => (route.query.filter as string) || '');
 
 const classes = ref<ClassItem[]>([])
 
