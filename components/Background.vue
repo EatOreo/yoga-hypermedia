@@ -8,7 +8,7 @@
       ]">
       <h1 v-if="suntitle" class="text-dark text-4xl z-20 text-center p-2">{{ suntitle }}</h1>
       <div class="px-4 flex flex-1 justify-center pb-5" >
-        <div class="z-20 layout-content-container flex flex-col max-w-[960px] flex-1 bg-bright rounded-2xl">
+        <div class="z-20 flex flex-col max-w-[960px] flex-1 bg-bright rounded-2xl">
           <slot />
         </div>
       </div>

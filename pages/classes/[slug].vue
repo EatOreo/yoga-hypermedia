@@ -8,7 +8,7 @@
       <div class="md:flex p-4">
         <div class="flex-1 p-4">
           <div class="flex flex-col justify-between gap-2">
-            <p class="text-dark tracking-light text-[32px] font-bold leading-tight">{{ classItem?.title }}</p>
+            <p class="text-dark text-[32px]">{{ classItem?.title }}</p>
             <p class="text-lgreen text-sm"> {{ classItem?.subtitle }} </p>
           </div>
           <p class="text-dark pt-4 text-justify">
@@ -17,7 +17,7 @@
         </div>
         <div class="flex-1 p-4">
           <img :src="classItem?.image" alt="Class Image" class="w-full rounded-xl object-cover mb-4" />
-          <h3 class="text-lblue mt-8 text-lg font-bold leading-tight pb-2">Class
+          <h3 class="text-lblue mt-8 text-lg pb-2">Class
             Details</h3>
           <div class="grid grid-cols-[20%_1fr] gap-x-6">
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
