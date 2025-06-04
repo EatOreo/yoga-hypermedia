@@ -1,5 +1,5 @@
 <template>
-  <header class="flex md:px-10 h-20 py-2 bg-lgreen items-center">
+  <header class="z-30 flex md:px-10 h-20 py-2 bg-lgreen items-center">
     <router-link to="/">
       <div class="md:pl-10 flex items-center text-dark">
         <icon />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <footer class="footer text-lgreen w-full max-w-2xl mx-auto p-4 text-center flex flex-col items-center">
+    <footer class="z-20 footer text-lgreen w-full max-w-2xl mx-auto p-4 text-center flex flex-col items-center">
       <div class="flex justify-center gap-2">
         <a href="https://github.com/EatOreo/yoga-hypermedia/" target="_blank" rel="noopener" aria-label="GitHub" class="inline-block align-middle">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="inline">

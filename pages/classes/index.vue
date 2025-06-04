@@ -1,8 +1,5 @@
 <template>
-  <div class="hidden lg:flex justify-center">
-    <img src="/images/Classes.svg" alt="Yoga Classes" class="h-64" />
-  </div>
-  <Background class="pt-4 lg:p-0">
+  <Background suntitle="Classes">
     <Selector :options="[
       { label: 'All Classes', query: '' },
       { label: 'Beginner', query: 'beginner' },
