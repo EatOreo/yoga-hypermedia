@@ -8,7 +8,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="flex flex-col gap-3 pb-3 cursor-pointer"
+    class="flex flex-col gap-3 cursor-pointer"
     @click="$router.push(`/classes/${encodeURIComponent(title)}`)"
   >
     <div

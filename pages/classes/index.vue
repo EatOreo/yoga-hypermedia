@@ -6,7 +6,7 @@
       { label: 'Intermediate', query: 'intermediate' },
       { label: 'Advanced', query: 'advanced' },
     ]" />
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-4 pb-6">
       <ClassCard v-for="classItem in classes.filter(c => !selected || c.intensity === selected)" :key="classItem.title"
         :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity"
         :image="classItem.image" />
