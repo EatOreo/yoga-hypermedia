@@ -419,6 +419,9 @@
   .bg-\[url\(\'\/images\/sun\.svg\'\)\] {
     background-image: url('/images/sun.svg');
   }
+  .bg-\[url\(\'\/yoga-hypermedia\/images\/sun\.svg\'\)\] {
+    background-image: url('/yoga-hypermedia/images/sun.svg');
+  }
   .bg-\[length\:800px\] {
     background-size: 800px;
   }

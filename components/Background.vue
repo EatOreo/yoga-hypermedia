@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div v-if="suntitle"
-      class="absolute inset-0 bg-no-repeat bg-top bg-[url('/images/sun.svg')] bg-[length:800px] md:bg-[length:1160px] -top-[224px] md:-top-[300px]">
+      class="absolute inset-0 bg-no-repeat bg-top bg-[url('/yoga-hypermedia/images/sun.svg')] bg-[length:800px] md:bg-[length:1160px] -top-[224px] md:-top-[300px]">
     </div>
     <div class="flex flex-col" :class="[
         suntitle ? 'pt-22 md:pt-38' : ''
