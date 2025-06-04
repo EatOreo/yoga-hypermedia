@@ -226,6 +226,12 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-18 {
+    height: calc(var(--spacing) * 18);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
@@ -319,12 +325,6 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 3px;
   }
-  .border-\[\#1c160d\] {
-    border-color: #1c160d;
-  }
-  .border-\[\#A4AC86\] {
-    border-color: #A4AC86;
-  }
   .border-\[\#dbdbdb\] {
     border-color: #dbdbdb;
   }
@@ -364,6 +364,9 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -387,9 +390,6 @@
   }
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
-  }
-  .pb-3\.5 {
-    padding-bottom: calc(var(--spacing) * 3.5);
   }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
@@ -442,12 +442,6 @@
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
   }
-  .text-\[\#1c160d\] {
-    color: #1c160d;
-  }
-  .text-\[\#A4AC86\] {
-    color: #A4AC86;
-  }
   .text-dark {
     color: var(--color-dark);
   }
@@ -483,11 +477,6 @@
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .md\:p-0 {
-    @media (width >= 48rem) {
-      padding: calc(var(--spacing) * 0);
     }
   }
   .md\:px-10 {

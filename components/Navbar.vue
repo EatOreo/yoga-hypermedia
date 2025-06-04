@@ -1,10 +1,8 @@
 <template>
-  <header class="flex md:px-10 py-4 bg-lgreen items-center">
+  <header class="flex md:px-10 h-20 py-2 bg-lgreen items-center">
     <router-link to="/">
       <div class="md:pl-10 flex items-center text-dark">
-        <div class="w-[150%] h-[150%] overflow-visible">
-          <icon />
-        </div>
+        <icon />
         <h2 class="text-dark text-3xl">Yogaga </h2>
       </div>
     </router-link>
