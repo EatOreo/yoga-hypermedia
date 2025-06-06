@@ -5,7 +5,8 @@
       { label: slug }
     ]" />
     <Background>
-      {{ slug }}
+      <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
+      {{ teacher?.name }}
     </Background>
   </div>
 </template>
@@ -15,6 +16,6 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const slug = route.params.slug as string
-</script>
 
-<style></style>
+const teacher = await api.getTeacherByName(slug);
+</script>

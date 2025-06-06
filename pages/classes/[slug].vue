@@ -20,13 +20,16 @@
           <h3 class="text-lblue mt-8 text-lg pb-2">Class
             Details</h3>
           <div class="grid grid-cols-[20%_1fr] gap-x-6">
-            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
-              <p class="text-lgreen text-sm">Teacher</p>
-              <router-link class="text-lorange text-sm" to="/teachers/Sarah%20Miller">Sarah Miller</router-link>
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-3 items-center">
+              <p class="text-lgreen text-sm self-center">Teacher</p>
+              <router-link class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
+                <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
+                {{ teacher?.name }}
+              </router-link>
             </div>
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
               <p class="text-lgreen text-sm">Intensity</p>
-              <p class="text-dark text-sm">{{ classItem?.intensity }}</p>
+              <p class="text-dark text-sm capitalize">{{ classItem?.intensity }}</p>
             </div>
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
               <p class="text-lgreen text-sm">Schedule</p>
@@ -50,6 +53,5 @@ const route = useRoute()
 const slug = route.params.slug as string
 
 const classItem = await api.getClassByTitle(slug);
+const teacher = await api.getTeacherById(classItem!.teacherId);
 </script>
-
-<style></style>
