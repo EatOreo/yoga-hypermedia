@@ -45,19 +45,11 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
-import { ref, onMounted } from 'vue'
-import type { ClassItem } from '~/types/class-item'
 
 const route = useRoute()
 const slug = route.params.slug as string
 
-const classItem = ref<ClassItem>()
-onMounted(async () => {
-  const res = await fetch('/yoga-hypermedia/api/classes.json')
-  if (res.ok) {
-    classItem.value = (await res.json() as ClassItem[]).filter(c => c.title === slug)[0]
-  }
-})
+const classItem = await api.getClassByTitle(slug);
 </script>
 
 <style></style>

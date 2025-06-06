@@ -15,19 +15,11 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, computed } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router';
-import type { ClassItem } from '~/types/class-item';
 
 const route = useRoute();
 const selected = computed(() => (route.query.select as string) || '');
 
-const classes = ref<ClassItem[]>([])
-
-onMounted(async () => {
-  const res = await fetch('/yoga-hypermedia/api/classes.json')
-  if (res.ok) {
-    classes.value = await res.json() as ClassItem[]
-  }
-})
+const classes = await api.getClasses();
 </script>
