@@ -41,8 +41,8 @@
       </div>
     </BackGround>
   </div>
-  <div v-else class="text-red-500 text-center w-full py-8">
-    Sorry, this class does not exist.
+  <div v-else class="alertmessage">
+    Sorry, teacher not found.
   </div>
 </template>
 
@@ -57,5 +57,11 @@ const teacher = await api.getTeacherById(classItem!.teacherId);
 </script>
 
 <style>
-.mainframe {color:red;}
+.alertmessage {
+  color:red;
+  text-align: center;
+  width: 100%; 
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 </style>
