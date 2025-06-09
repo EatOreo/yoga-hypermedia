@@ -1,13 +1,48 @@
 <template>
-  <div>
+  <div v-if="classItem">
     <BreadCrumb :items="[
-      { label: 'Teachers', to: '/teachers' },
+      { label: 'Classes', to: '/classes' },
       { label: slug }
     ]" />
     <Background>
-      <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
-      {{ teacher?.name }}
-    </Background>
+      <div class="md:flex p-4">
+        <div class="flex-1 p-4">
+          <div class="flex flex-col justify-between gap-2">
+            <p class="text-dark text-[32px]">{{ classItem?.title }}</p>
+            <p class="text-lgreen text-sm"> {{ classItem?.subtitle }} </p>
+          </div>
+          <p class="text-dark pt-4 text-justify">
+            {{ classItem?.description }}
+          </p>
+        </div>
+        <div class="flex-1 p-4">
+          <img :src="classItem?.image" alt="Class Image" class="w-full rounded-xl object-cover mb-4" />
+          <h3 class="text-lblue mt-8 text-lg pb-2">Class
+            Details</h3>
+          <div class="grid grid-cols-[20%_1fr] gap-x-6">
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-3 items-center">
+              <p class="text-lgreen text-sm self-center">Teacher</p>
+              <router-link class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
+                <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
+                {{ teacher?.name }}
+              </router-link>
+            </div>
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
+              <p class="text-lgreen text-sm">Intensity</p>
+              <p class="text-dark text-sm capitalize">{{ classItem?.intensity }}</p>
+            </div>
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
+              <p class="text-lgreen text-sm">Schedule</p>
+              <p class="text-dark text-sm"> {{ classItem?.schedule }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </BackGround>
+  </div>
+  <div v-else class="text-red-500 text-center w-full py-8">
+    Sorry, this class does not exist.
   </div>
 </template>
 
@@ -17,5 +52,10 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const slug = route.params.slug as string
 
-const teacher = await api.getTeacherByName(slug);
+const classItem = await api.getClassByTitle(slug);
+const teacher = await api.getTeacherById(classItem!.teacherId);
 </script>
+
+<style>
+.mainframe {color:red;}
+</style>
