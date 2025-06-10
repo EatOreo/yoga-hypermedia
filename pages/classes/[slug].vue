@@ -53,5 +53,5 @@ const route = useRoute()
 const slug = route.params.slug as string
 
 const classItem = await api.getClassByTitle(slug);
-const teacher = await api.getTeacherById(classItem!.teacherId);
+const teacher = classItem ? await api.getTeacherById(classItem!.teacherId) : null;
 </script>
