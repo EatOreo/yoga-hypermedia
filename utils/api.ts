@@ -1,5 +1,5 @@
-import { allClasses, type ClassItem } from "~/types/class-item";
-import { allTeachers, type TeacherItem } from "~/types/teacher-item";
+import { allClasses, type ClassItem } from "~/utils/types/class-item";
+import { allTeachers, type TeacherItem } from "~/utils/types/teacher-item";
 
 // this could call like an actual api
 // we could use supabase and make these functions use the supabase client!
