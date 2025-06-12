@@ -1,13 +1,13 @@
 <template>
   <div class="flex border-b border-[#dbdbdb] px-4 gap-8">
-    <router-link v-for="(option, idx) in options" :key="idx"
+    <NuxtLink v-for="(option, idx) in options" :key="idx"
       class="flex flex-col items-center justify-center border-b-[3px] pb-2 pt-4"
       :class="selected === option.query ? 'border-dark' : 'border-lgreen'"
       :to="option.query ? '?select=' + option.query : '?'">
       <p class="text-sm" :class="selected === option.query ? 'text-dark' : 'text-lgreen'">
         {{ option.label }}
       </p>
-    </router-link>
+    </NuxtLink>
   </div>
 </template>
 

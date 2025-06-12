@@ -66,8 +66,13 @@
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const slug = route.params.slug as string
+const name = route.params.name as string
 
+<<<<<<< HEAD:pages/teachers/[slug].vue
 const teacherItem = await api.getTeacherByTitle(slug);
 const teacher = await api.getTeacherById(teacherItem!.teacherId);
+=======
+const classItem = await api.getClassByTitle(name);
+const teacher = await api.getTeacherById(classItem!.teacherId);
+>>>>>>> 0f3053a942254052c851fd23b1e0abc03da28c6b:pages/teachers/[name].vue
 </script>

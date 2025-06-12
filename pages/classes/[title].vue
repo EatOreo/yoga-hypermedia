@@ -2,7 +2,7 @@
   <div v-if="classItem">
     <BreadCrumb :items="[
       { label: 'Classes', to: '/classes' },
-      { label: slug }
+      { label: classItem.title }
     ]" />
     <Background>
       <div class="md:flex p-4">
@@ -22,10 +22,10 @@
           <div class="grid grid-cols-[20%_1fr] gap-x-6">
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-3 items-center">
               <p class="text-lgreen text-sm self-center">Teacher</p>
-              <router-link class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
+              <NuxtLink class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
                 <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
                 {{ teacher?.name }}
-              </router-link>
+              </NuxtLink>
             </div>
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
               <p class="text-lgreen text-sm">Intensity</p>
@@ -50,8 +50,8 @@
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const slug = route.params.slug as string
+const title = route.params.title as string
 
-const classItem = await api.getClassByTitle(slug);
-const teacher = await api.getTeacherById(classItem!.teacherId);
+const classItem = await api.getClassByTitle(title);
+const teacher = classItem ? await api.getTeacherById(classItem!.teacherId) : null;
 </script>
