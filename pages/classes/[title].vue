@@ -2,7 +2,7 @@
   <div v-if="classItem">
     <BreadCrumb :items="[
       { label: 'Classes', to: '/classes' },
-      { label: slug }
+      { label: classItem.title }
     ]" />
     <Background>
       <div class="md:flex p-4">
@@ -41,8 +41,8 @@
       </div>
     </BackGround>
   </div>
-  <div v-else class="alertmessage">
-    Sorry, teacher not found.
+  <div v-else class="text-red-500 text-center w-full py-8">
+    Sorry, this class does not exist.
   </div>
 </template>
 
@@ -50,18 +50,8 @@
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const slug = route.params.slug as string
+const title = route.params.title as string
 
-const classItem = await api.getClassByTitle(slug);
-const teacher = await api.getTeacherById(classItem!.teacherId);
+const classItem = await api.getClassByTitle(title);
+const teacher = classItem ? await api.getTeacherById(classItem!.teacherId) : null;
 </script>
-
-<style>
-.alertmessage {
-  color:red;
-  text-align: center;
-  width: 100%; 
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-</style>
