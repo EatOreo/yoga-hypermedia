@@ -22,10 +22,10 @@
           <div class="grid grid-cols-[20%_1fr] gap-x-6">
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-3 items-center">
               <p class="text-lgreen text-sm self-center">Teacher</p>
-              <router-link class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
+              <NuxtLink class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
                 <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
                 {{ teacher?.name }}
-              </router-link>
+              </NuxtLink>
             </div>
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
               <p class="text-lgreen text-sm">Intensity</p>
