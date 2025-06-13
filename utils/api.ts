@@ -10,6 +10,9 @@ const api = {
     async getClassByTitle(title: string): Promise<ClassItem | undefined> {
         return allClasses.find(c => c.title === title);
     },
+    async getTeachers(): Promise<TeacherItem[]> {
+        return allTeachers;
+    },
     async getTeacherById(id: number): Promise<TeacherItem | undefined> {
         return allTeachers.find(t => t.id === id);
     },
