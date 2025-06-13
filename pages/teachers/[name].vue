@@ -2,12 +2,12 @@
   <div v-if="teacherItem">
     <BreadCrumb :items="[
       { label: 'Teachers', to: '/teachers' },
-      { label: slug }
+      { label: name }
     ]" />
     <Background>
       <div class="container mx-auto p-6">        
         <div class="flex flex-col md:flex-row items-center md:items-start">
-          <img src="path/to/image.jpg" alt="Huy Tran Vin" class="w-40 h-40 rounded-full shadow-md">
+          <img :src="teacherItem.image" alt="Huy Tran Vin" class="w-40 h-40 rounded-full shadow-md">
           <div class="md:ml-6 mt-4 md:mt-0">
             <h3 class="text-2xl font-semibold">{{ teacherItem?.name }}</h3>
             <p class="italic text-gray-500 mt-2">{{ teacherItem?.quote }}</p>
@@ -38,9 +38,9 @@
           <div class="grid grid-cols-[20%_1fr] gap-x-6">
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-3 items-center">
               <p class="text-lgreen text-sm self-center">Teacher</p>
-              <router-link class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
-                <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
-                {{ teacher?.name }}
+              <router-link class="text-dark text-sm flex items-center" :to="'/teachers/' + teacherItem?.name">
+                <img :src="teacherItem?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
+                {{ teacherItem?.name }}
               </router-link>
             </div>
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
@@ -68,11 +68,5 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const name = route.params.name as string
 
-<<<<<<< HEAD:pages/teachers/[slug].vue
-const teacherItem = await api.getTeacherByTitle(slug);
-const teacher = await api.getTeacherById(teacherItem!.teacherId);
-=======
-const classItem = await api.getClassByTitle(name);
-const teacher = await api.getTeacherById(classItem!.teacherId);
->>>>>>> 0f3053a942254052c851fd23b1e0abc03da28c6b:pages/teachers/[name].vue
+const teacherItem = await api.getTeacherByName(name);
 </script>
