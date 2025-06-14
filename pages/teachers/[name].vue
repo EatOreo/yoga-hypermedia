@@ -20,14 +20,14 @@
           <h4 class="text-xl text-teal-500 font-semibold">Contact (email)</h4>
           <p class="text-gray-600">{{ teacherItem?.email }}</p>
           </div>
-          <div class="flex">
+          <div class="grid grid-cols-[200px_auto]">
             <h3 class="text-xl text-teal-500 font-semibold">Classes</h3>
             <div class="grid grid-cols-2">
               <ClassCard v-for="classItem in classes.filter(t => t.teacherId === teacherItem.id)" :key="classItem.title"
               :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image" />
             </div>
           </div>
-          <div class="flex ">
+          <div class="grid grid-cols-[200px_auto]">
             <h3 class="text-xl text-teal-500 font-semibold"> Events </h3>
             <div class="grid grid-cols-2">
               <EventCard v-for="eventItem in events.filter(e => teacherItem.id in e.teacherIds)" :key="eventItem.title" :event="eventItem" />
