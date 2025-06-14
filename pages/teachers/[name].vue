@@ -48,6 +48,6 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
-const classes = await api.getClassesByTeacherId();
-const events = await api.getEventsByTeacherId();
+const classes = await api.getClassesByTeacherId(teacherItem.id);
+const events = await api.getEventsByTeacherId(teacherItem.id);
 </script>
