@@ -15,8 +15,8 @@ const props = defineProps({
       :style="`background-image:url('${image}')`"
     ></div>
     <div>
-      <p class="text-dark text-base font-medium leading-normal">{{ name }}</p>
-      <p class="text-lgreen text-sm font-normal leading-normal">Discover more</p>
+      <p class="text-dark text-base text-center font-medium leading-normal">{{ name }}</p>
+      <p class="text-lgreen text-sm text-center font-normal leading-normal">Discover more</p>
     </div>
   </div>
 </template>

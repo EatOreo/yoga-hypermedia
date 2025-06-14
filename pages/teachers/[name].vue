@@ -15,45 +15,9 @@
           </div>
         </div>
       </div>
-        
-        <div class="mt-6">
-          <h4 class="text-xl font-semibold">Contact (email)</h4>
-          <p class="text-gray-600">{{ teacherItem?.email }}</p>
-        </div>
-      
-      <div class="md:flex p-4">
-        <div class="flex-1 p-4">
-          <div class="flex flex-col justify-between gap-2">
-            <p class="text-dark text-[32px]">{{ teacherItem?.name }}</p>
-            <p class="text-lgreen text-sm"> {{ teacherItem?.quote }} </p>
-          </div>
-          <p class="text-dark pt-4 text-justify">
-            {{ teacherItem?.description }}
-          </p>
-        </div>
-        <div class="flex-1 p-4">
-          <img :src="teacherItem?.image" alt="Class Image" class="w-full rounded-xl object-cover mb-4" />
-          <h3 class="text-lblue mt-8 text-lg pb-2">Class
-            Details</h3>
-          <div class="grid grid-cols-[20%_1fr] gap-x-6">
-            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-3 items-center">
-              <p class="text-lgreen text-sm self-center">Teacher</p>
-              <router-link class="text-dark text-sm flex items-center" :to="'/teachers/' + teacherItem?.name">
-                <img :src="teacherItem?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
-                {{ teacherItem?.name }}
-              </router-link>
-            </div>
-            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
-              <p class="text-lgreen text-sm">Intensity</p>
-              <p class="text-dark text-sm capitalize">{{ teacherItem?.email }}</p>
-            </div>
-            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
-              <p class="text-lgreen text-sm">Schedule</p>
-              <p class="text-dark text-sm"> {{ teacherItem?.gender }}
-              </p>
-            </div>
-          </div>
-        </div>
+      <div class="mt-6">
+        <h4 class="text-xl font-semibold">Contact (email)</h4>
+        <p class="text-gray-600">{{ teacherItem?.email }}</p>
       </div>
     </BackGround>
   </div>
