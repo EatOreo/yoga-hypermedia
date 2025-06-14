@@ -1,7 +1,6 @@
 <script setup>
 const props = defineProps({
   name: String,
-  clickon: String,
   image: String
 })
 </script>
@@ -17,7 +16,7 @@ const props = defineProps({
     ></div>
     <div>
       <p class="text-dark text-base font-medium leading-normal">{{ name }}</p>
-      <p class="text-lgreen text-sm font-normal leading-normal">{{ clickon }}</p>
+      <p class="text-lgreen text-sm font-normal leading-normal">Discover more</p>
     </div>
   </div>
 </template>
