@@ -23,14 +23,14 @@
           <div class="grid grid-cols-[200px_auto]">
             <h3 class="text-xl text-teal-500 font-semibold">Classes</h3>
             <div class="grid grid-cols-2">
-              <ClassCard v-for="classItem in classes.filter(c => c.teacherId === teacherItem.id)" :key="classItem.title"
+              <ClassCard v-for="classItem in classes" :key="classItem.title"
               :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image" />
             </div>
           </div>
           <div class="grid grid-cols-[200px_auto]">
             <h3 class="text-xl text-teal-500 font-semibold"> Events </h3>
             <div class="grid grid-cols-2">
-              <EventCard v-for="eventItem in events.filter(e => teacherItem.id in e.teacherIds)" :key="eventItem.title" :event="eventItem" />
+              <EventCard v-for="eventItem in events" :key="eventItem.title" :event="eventItem" />
             </div>
           </div>
         </div>
@@ -48,6 +48,6 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
-const classes = await api.getClasses();
-const events = await api.getEvents();
+const classes = await api.getClassesByTeacherId();
+const events = await api.getEventsByTeacherId();
 </script>
