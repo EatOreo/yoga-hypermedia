@@ -8,29 +8,29 @@
     <img :src="teacherItem.image" alt="Huy Tran Vin" class="w-40 h-40 rounded-full shadow-md">
     </div>
     <Background>
-        <div class="container flex-wrap mx-auto p-6">        
+        <div class="container flex-wrap mx-auto gap-10 p-6">        
           <div class="flex flex-col md:flex-row items-center md:items-start">
             <div class="md:ml-6 mt-4 md:mt-0">
               <h3 class="text-2xl text-teal-900 font-semibold">{{ teacherItem?.name }}</h3>
               <p class="italic text-yellow-300 mt-2">{{ teacherItem?.quote }}</p>
               <p class="mt-4 text-gray-700">{{ teacherItem?.description }}</p>
             </div>
-          </div>
-          <div class="mt-6">
+            <div class="mt-6">
             <h4 class="text-xl text-teal-500 font-semibold">Contact (email)</h4>
             <p class="text-gray-600">{{ teacherItem?.email }}</p>
+            </div>
           </div>
           <div class="grid grid-cols-[200px_auto]">
-            <h3 class="text-xl text-teal-500 font-semibold">Classes</h3>
-            <div class="grid grid-cols-2">
+            <h3 class="text-xl text-center text-teal-500 font-semibold">Classes</h3>
+            <div class="grid grid-cols-4 gap-4">
               <ClassCard v-for="classItem in classes.filter(c => c.teacherId === teacherItem.id)" :key="classItem.title"
               :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image" />
             </div>
           </div>
           <div class="grid grid-cols-[200px_auto]">
-            <h3 class="text-xl text-teal-500 font-semibold"> Events </h3>
-            <div class="grid grid-cols-2">
-              <EventCard v-for="eventItem in events" :key="eventItem.title" :event="eventItem" />
+            <h3 class="text-xl text-center text-teal-500 font-semibold">Events</h3>
+            <div class="grid grid-cols-4 gap-4">
+              <EventCard v-for="eventItem in events.filter(e => teacherItem.id in e.teachersIDs)" :key="eventItem.title" :event="eventItem" />
             </div>
           </div>
         </div>
