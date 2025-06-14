@@ -1,14 +1,15 @@
 <script setup>
 const props = defineProps({
   name: String,
-  clickon: String
+  clickon: String,
+  image: String
 })
 </script>
 
 <template>
   <div
     class="flex flex-col gap-3 cursor-pointer"
-    @click="$router.push(`/classes/${encodeURIComponent(title)}`)"
+    @click="$router.push(`/classes/${encodeURIComponent(name)}`)"
   >
     <div
       class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
