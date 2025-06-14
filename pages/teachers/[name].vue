@@ -4,7 +4,7 @@
       { label: 'Teachers', to: '/teachers' },
       { label: name }
     ]" />
-    <div class = "center">
+    <div class = "text-center">
     <img :src="teacherItem.image" alt="Huy Tran Vin" class="w-40 h-40 rounded-full shadow-md">
     </div>
     <Background>
