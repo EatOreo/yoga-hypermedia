@@ -12,18 +12,18 @@
         <div class="flex flex-col items-center md:items-start">
           <div class="mt-4">
             <h3 class="text-2xl text-teal-900 font-semibold">{{ teacherItem?.name }}</h3>
-            <p class="italic text-yellow-300 mt-2">{{ teacherItem?.quote }}</p>
+            <p class="italic lgrey mt-2">{{ teacherItem?.quote }}</p>
             <p class="mt-4 text-gray-700">{{ teacherItem?.description }}</p>
           </div>
         </div>
         <div class="mt-6">
-          <h4 class="text-xl emerald-600 font-semibold">Contact (email)</h4>
+          <h4 class="text-xl lgreen font-semibold">Contact (email)</h4>
           <p class="text-gray-600">{{ teacherItem?.email }}</p>
         </div>
       </div>
         <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4">
           <div>
-            <h3 class="text-xl text-center emerald-600 font-semibold">Classes</h3>
+            <h3 class="text-xl text-center lgreen font-semibold">Classes</h3>
           </div>
           <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
             <ClassCard v-for="classItem in classes" :key="classItem.title"
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="flex flex-row justify-start items-center flex-nowrap gap-4">
-          <h3 class="text-xl text-center emerald-600 font-semibold">Events</h3>
+          <h3 class="text-xl text-center lgreen font-semibold">Events</h3>
           <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
             <EventCard v-for="eventItem in events" :key="eventItem.title" :event="eventItem" />
           </div>
@@ -50,6 +50,11 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
-const classes = await api.getClassesByTeacherId(teacherItem.id);
-const events = await api.getEventsByTeacherId(teacherItem.id);
+const teacherid = teacherItem.id
+
+const allclasses = await api.getClasses();
+const allevents = await api.getEvents();
+
+const classes = allclasses.filter(c => c.teacherId === teacherid);
+const events = allevents.filter(e => e.teacherIds?.includes(teacherid));
 </script>
