@@ -50,11 +50,14 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
-const teacherid = teacherItem.id
+const teacherid = teacherItem.id;
+console.log(teacherid);
 
 const allclasses = await api.getClasses();
 const allevents = await api.getEvents();
 
 const classes = allclasses.filter(c => c.teacherId === teacherid);
+console.log(classes);
 const events = allevents.filter(e => e.teacherIds?.includes(teacherid));
+console.log(events);
 </script>
