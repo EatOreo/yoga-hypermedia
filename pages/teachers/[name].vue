@@ -8,7 +8,7 @@
       <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl h-64 object-cover mb-4" />
     </div>
     <Background>
-      <div class="flex flex-row mx-auto gap-5 p-4 border-b-[#dbdbdb]">
+      <div class="flex flex-row items-center mx-auto gap-5 p-4 border-b-2 border-lgreen">
         <div class="flex flex-col items-center md:items-start mb-4">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
@@ -17,9 +17,9 @@
           </div>
         </div>
         <div class="flex flex-col items-start mb-4">
-          <p class="text-lgreen text-lg">Contact</p>
+          <p class="text-lgreen text-align text-lg">Contact</p>
           <p class="border rounded-full px-4 py-0 opacity-100
-          shadow-md text-md lowercase font-bold lgreen text-white-100 shadow-white-500/50">{{ teacherItem?.email }}
+          shadow-md text-md lowercase font-bold bg-lgreen text-white-100 shadow-white-500/50">{{ teacherItem?.email }}
           </p>
         </div>
       </div>
