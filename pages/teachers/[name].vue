@@ -4,11 +4,11 @@
       { label: 'Teachers', to: '/teachers' },
       { label: teacherItem.name }
     ]" />
-    <div class="flex flex items-center justify-center">
-      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl object-cover mb-4" />
+    <div class="flex items-center justify-center">
+      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl w-120 object-cover mb-4" />
     </div>
     <Background>
-      <div class="flex flex-row mx-auto gap-5 p-4">
+      <div class="flex flex-row mx-auto gap-5 p-4 border-t-[#dbdbdb]">
         <div class="flex flex-col items-center md:items-start mb-4">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
@@ -16,7 +16,7 @@
             <p class="text-dark pt-4 text-justify">{{ teacherItem?.description }}</p>
           </div>
         </div>
-        <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
+        <div class="flex flex-col items-center md:items-start mb-4">
           <p class="text-lgreen text-sm">Contact</p>
           <p class="text-dark text-sm capitalize">{{ teacherItem?.email }}</p>
         </div>
