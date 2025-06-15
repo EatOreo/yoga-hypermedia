@@ -4,8 +4,11 @@
       { label: 'Teachers', to: '/teachers' },
       { label: teacherItem.name }
     ]" />
+    <div class="flex flex items-center justify-center">
+      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl object-cover mb-4" />
+    </div>
     <Background>
-      <div class="container flex-row mx-auto gap-10 p-6">
+      <div class="container flex-row mx-auto gap-5 p-4">
         <div class="flex flex-col items-center md:items-start mb-4">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
@@ -18,7 +21,7 @@
           <p class="text-dark text-sm capitalize">{{ teacherItem?.email }}</p>
         </div>
       </div>
-      <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 p-6">
+      <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 p-4">
         <div>
           <h3 class="text-xl text-center lgreen font-semibold">Classes</h3>
         </div>
@@ -28,10 +31,10 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-row justify-start items-center flex-nowrap gap-4 p-6">
+      <div class="flex flex-row justify-start items-center flex-nowrap gap-4 p-4">
         <h3 class="text-xl text-center lgreen font-semibold">Events</h3>
         <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
-          <div v-for="eventItem in events" :key="eventItem.title" class="w-40 flex-shrink-0">
+          <div v-for="eventItem in events" :key="eventItem.title" class="w-80 flex-shrink-0">
             <EventCard :event="eventItem"/>
           </div>
         </div>
