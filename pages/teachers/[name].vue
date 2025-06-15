@@ -20,18 +20,18 @@
             <p class="text-gray-600">{{ teacherItem?.email }}</p>
             </div>
           </div>
-          <div class="grid grid-cols-[200px_auto]">
+          <div class="flex flex-row justify-start items-start flex-nowrap gap-4">
             <div>
               <h3 class="text-xl text-center emerald-600 font-semibold">Classes</h3>
             </div>
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-3 grid-rows-1 gap-4">
               <ClassCard v-for="classItem in classes.filter(c => c.teacherId === teacherItem!.id)" :key="classItem.title"
               :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image" />
             </div>
           </div>
-          <div class="grid grid-cols-[200px_auto]">
+          <div class="flex flex-row justify-start items-start flex-nowrap gap-4">
             <h3 class="text-xl text-center emerald-600 font-semibold">Events</h3>
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-3 grid-rows-1 gap-4">
               <EventCard v-for="eventItem in events.filter(e => e.teacherIds?.includes(teacherItem!.id))" :key="eventItem.title" :event="eventItem" />
             </div>
           </div>
