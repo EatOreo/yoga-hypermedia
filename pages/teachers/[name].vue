@@ -5,7 +5,7 @@
       { label: teacherItem.name }
     ]" />
     <div class="flex items-center justify-center">
-      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl h-20 w-20 object-cover mb-4" />
+      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl h-35 w-35 object-cover mb-4" />
     </div>
     <Background>
       <div class="flex flex-row items-center mx-auto gap-5 p-4 border-b-2 border-lgreen">
@@ -13,7 +13,7 @@
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
             <p class="text-lgreen text-sm">{{ teacherItem?.quote }}</p>
-            <p class="text-dark pt-4 text-justify">{{ teacherItem?.description }}</p>
+            <p class="text-dark w-full pt-4 text-justify">{{ teacherItem?.description }}</p>
           </div>
         </div>
         <div class="flex flex-col items-center justify-center mb-4 flex-shrink-2">
@@ -23,7 +23,7 @@
           </p>
         </div>
       </div>
-      <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 p-4">
+      <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4">
         <div>
           <h3 class="text-xl text-center text-lgreen font-semibold">Classes</h3>
         </div>
@@ -33,10 +33,12 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-row justify-start items-center flex-nowrap gap-4 p-4">
-        <h3 class="text-xl text-center text-lgreen font-semibold">Events</h3>
+      <div v-if="events.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4">
+        <div>
+          <h3 class="text-xl text-center text-lgreen font-semibold">Events</h3>
+        </div>
         <div class="flex flex-row gap-3 p-4 overflow-x-auto">
-          <div v-for="eventItem in events" :key="eventItem.title" class="w-80 flex-shrink-0">
+          <div v-for="eventItem in events" :key="eventItem.title" class="w-60 flex-shrink-0">
             <EventCard :event="eventItem"/>
           </div>
         </div>
