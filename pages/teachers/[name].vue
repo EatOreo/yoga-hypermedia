@@ -4,16 +4,16 @@
       { label: 'Teachers', to: '/teachers' },
       { label: teacherItem.name }
     ]" />
-    <div class="flex h-10 w-10 items-center justify-center">
-      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl w-full object-cover mb-4" />
+    <div class="flex items-center justify-center">
+      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl h-20 w-20 object-cover mb-4" />
     </div>
     <Background>
       <div class="flex flex-row items-center mx-auto gap-5 p-4 border-b-2 border-lgreen">
-        <div class="flex flex-col items-center md:items-start mb-4">
+        <div class="flex flex-col items-center md:items-start">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
             <p class="text-lgreen text-sm">{{ teacherItem?.quote }}</p>
-            <p class="text-dark pt-4 text-justify">{{ teacherItem?.description }}</p>
+            <p class="w-1/2 text-dark pt-4 text-justify">{{ teacherItem?.description }}</p>
           </div>
         </div>
         <div class="flex flex-col items-center justify-center mb-4 flex-shrink-2">
