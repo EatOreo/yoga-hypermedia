@@ -9,11 +9,11 @@
     </div>
     <Background>
       <div class="flex flex-row items-center mx-auto gap-5 p-4 border-b-2 border-lgreen">
-        <div class="flex flex-col items-center md:items-start">
+        <div class="flex w-1/2 flex-col items-center md:items-start">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
             <p class="text-lgreen text-sm">{{ teacherItem?.quote }}</p>
-            <p class="w-1/2 text-dark pt-4 text-justify">{{ teacherItem?.description }}</p>
+            <p class="text-dark pt-4 text-justify">{{ teacherItem?.description }}</p>
           </div>
         </div>
         <div class="flex flex-col items-center justify-center mb-4 flex-shrink-2">
@@ -25,17 +25,17 @@
       </div>
       <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 p-4">
         <div>
-          <h3 class="text-xl text-center lgreen font-semibold">Classes</h3>
+          <h3 class="text-xl text-center text-lgreen font-semibold">Classes</h3>
         </div>
-        <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
+        <div class="flex flex-row gap-3 p-4 overflow-x-auto">
           <div v-for="classItem in classes" :key="classItem.title" class="w-40 flex-shrink-0">
             <ClassCard :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image"/>
           </div>
         </div>
       </div>
       <div class="flex flex-row justify-start items-center flex-nowrap gap-4 p-4">
-        <h3 class="text-xl text-center lgreen font-semibold">Events</h3>
-        <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
+        <h3 class="text-xl text-center text-lgreen font-semibold">Events</h3>
+        <div class="flex flex-row gap-3 p-4 overflow-x-auto">
           <div v-for="eventItem in events" :key="eventItem.title" class="w-80 flex-shrink-0">
             <EventCard :event="eventItem"/>
           </div>
