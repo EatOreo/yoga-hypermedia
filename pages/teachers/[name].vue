@@ -5,7 +5,7 @@
       { label: name }
     ]" />
     <div class="flex justify-center items-start mb-4">
-      <img class = "w-40 h-40 rounded-full shadow-md" src="/yoga-hypermedia/images/tikka.png" alt="">
+      <img class = "w-40 h-40 rounded-full shadow-md" src="teacherItem.image" alt="teacher.image">
     </div>
     <Background>
       <div class="container flex-wrap mx-auto gap-10 p-6">
