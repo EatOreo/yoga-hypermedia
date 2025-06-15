@@ -18,22 +18,21 @@
           <p class="text-dark text-sm capitalize">{{ teacherItem?.email }}</p>
         </div>
       </div>
-        <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 p-6">
-          <div>
-            <h3 class="text-xl text-center lgreen font-semibold">Classes</h3>
-          </div>
-          <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
-            <div v-for="classItem in classes" :key="classItem.title" class="w-40 flex-shrink-0">
-              <ClassCard :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image"/>
-            </div>
+      <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 p-6">
+        <div>
+          <h3 class="text-xl text-center lgreen font-semibold">Classes</h3>
+        </div>
+        <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
+          <div v-for="classItem in classes" :key="classItem.title" class="w-40 flex-shrink-0">
+            <ClassCard :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image"/>
           </div>
         </div>
-        <div class="flex flex-row justify-start items-center flex-nowrap gap-4 p-6">
-          <h3 class="text-xl text-center lgreen font-semibold">Events</h3>
-          <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
-            <div v-for="eventItem in events" :key="eventItem.title" class="w-40 flex-shrink-0">
-              <EventCard :event="eventItem"/>
-            </div>
+      </div>
+      <div class="flex flex-row justify-start items-center flex-nowrap gap-4 p-6">
+        <h3 class="text-xl text-center lgreen font-semibold">Events</h3>
+        <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
+          <div v-for="eventItem in events" :key="eventItem.title" class="w-40 flex-shrink-0">
+            <EventCard :event="eventItem"/>
           </div>
         </div>
       </div>
