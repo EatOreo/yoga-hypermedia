@@ -8,7 +8,7 @@ const api = {
     async getClasses(): Promise<ClassItem[]> {
         return allClasses;
     },
-    async getClassByTeacherId(id: int): Promise<ClassItem | undefined> {
+    async getClassByTeacherId(id: number): Promise<ClassItem | undefined> {
         return allClasses.find(c => c.teacherId === id);
     },
     async getClassByTitle(title: string): Promise<ClassItem | undefined> {
@@ -29,8 +29,8 @@ const api = {
     async getEventByTitle(title: string): Promise<EventItem | undefined> {
         return allEvents.find(e => e.title === title);
     },
-    async getEventByTeacherId(id: int): Promise<EventItem | undefined> {
-        return allEvents.find(e => id in e.teacherIds);
+    async getEventByTeacherId(id: number): Promise<EventItem | undefined> {
+        return allEvents.find(e => e.teacherIds?.includes(id));
     }
 };
 

@@ -23,14 +23,14 @@
           <div class="grid grid-cols-[200px_auto]">
             <h3 class="text-xl text-center text-teal-500 font-semibold">Classes</h3>
             <div class="grid grid-cols-4 gap-4">
-              <ClassCard v-for="classItem in classes.filter(c => c.teacherId === teacherItem.id)" :key="classItem.title"
+              <ClassCard v-for="classItem in classes.filter(c => c.teacherId === teacherItem!.id)" :key="classItem.title"
               :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image" />
             </div>
           </div>
           <div class="grid grid-cols-[200px_auto]">
             <h3 class="text-xl text-center text-teal-500 font-semibold">Events</h3>
             <div class="grid grid-cols-4 gap-4">
-              <EventCard v-for="eventItem in events.filter(e => teacherItem.id in e.teachersIDs)" :key="eventItem.title" :event="eventItem" />
+              <EventCard v-for="eventItem in events.filter(e => e.teacherIds?.includes(teacherItem!.id))" :key="eventItem.title" :event="eventItem" />
             </div>
           </div>
         </div>
