@@ -6,7 +6,7 @@
     ]" />
     <Background>
       <div class="container flex-row mx-auto gap-10 p-6">
-        <div class="flex flex-col items-center md:items-start">
+        <div class="flex flex-col items-center md:items-start mb-4">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
             <p class="text-lgreen text-sm">{{ teacherItem?.quote }}</p>
