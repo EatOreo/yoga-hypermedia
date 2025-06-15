@@ -9,7 +9,7 @@
     </div>
     <Background>
       <div class="flex flex-row items-center mx-auto gap-5 p-4 border-b-2 border-lgreen">
-        <div class="flex w-1/2 flex-col items-center md:items-start">
+        <div class="flex w-[200px] flex-col items-center md:items-start">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
             <p class="text-lgreen text-sm">{{ teacherItem?.quote }}</p>
