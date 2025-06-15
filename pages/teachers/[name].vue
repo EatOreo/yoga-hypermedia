@@ -2,23 +2,20 @@
   <div v-if="teacherItem">
     <BreadCrumb :items="[
       { label: 'Teachers', to: '/teachers' },
-      { label: name }
+      { label: teacherItem.name }
     ]" />
-    <div class="flex justify-center items-start mb-4">
-      <img class = "w-40 h-40 rounded-full shadow-md" :src="teacherItem.image" :alt="teacherItem.image">
-    </div>
     <Background>
-      <div class="container flex-wrap mx-auto gap-10 p-6">
+      <div class="container flex-row mx-auto gap-10 p-6">
         <div class="flex flex-col items-center md:items-start">
           <div class="mt-4">
-            <h3 class="text-2xl text-teal-900 font-semibold">{{ teacherItem?.name }}</h3>
-            <p class="italic lgrey mt-2">{{ teacherItem?.quote }}</p>
-            <p class="mt-4 text-gray-700">{{ teacherItem?.description }}</p>
+            <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
+            <p class="text-lgreen text-sm">{{ teacherItem?.quote }}</p>
+            <p class="text-dark pt-4 text-justify">{{ teacherItem?.description }}</p>
           </div>
         </div>
-        <div class="mt-6">
-          <h4 class="text-xl lgreen font-semibold">Contact (email)</h4>
-          <p class="text-gray-600">{{ teacherItem?.email }}</p>
+        <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
+          <p class="text-lgreen text-sm">Contact</p>
+          <p class="text-dark text-sm capitalize">{{ teacherItem?.email }}</p>
         </div>
       </div>
         <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 p-6">
@@ -39,6 +36,7 @@
             </div>
           </div>
         </div>
+      </div>
     </BackGround>
   </div>
   <div v-else class="text-red-700 text-center w-full pt-8 pb-8">
@@ -53,14 +51,6 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
-const teacherid = teacherItem.id;
-console.log(teacherid);
-
-const allclasses = await api.getClasses();
-const allevents = await api.getEvents();
-
-const classes = allclasses.filter(c => c.teacherId === teacherid);
-console.log(classes);
-const events = allevents.filter(e => e.teacherIds?.includes(teacherid));
-console.log(events);
+const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : null;
+const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : null;
 </script>
