@@ -5,7 +5,7 @@
       { label: teacherItem.name }
     ]" />
     <div class="flex items-center justify-center">
-      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl h-35 w-35 object-cover mb-4" />
+      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl h-25 w-25 object-cover mb-4" />
     </div>
     <Background>
       <div class="flex flex-row items-center mx-auto gap-5 p-4 border-b-2 border-lgreen">
