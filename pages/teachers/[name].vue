@@ -4,7 +4,7 @@
       { label: 'Teachers', to: '/teachers' },
       { label: teacherItem.name }
     ]" />
-    <div class="flex h-64 w-64 items-center justify-center">
+    <div class="flex h-10 w-10 items-center justify-center">
       <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl w-full object-cover mb-4" />
     </div>
     <Background>
