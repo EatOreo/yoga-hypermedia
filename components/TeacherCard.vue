@@ -16,7 +16,7 @@ const props = defineProps({
     ></div>
     <div>
       <p class="text-dark text-base text-center font-medium leading-normal">{{ name }}</p>
-      <p class="text-lgreen text-sm text-center font-normal leading-normal">Discover more</p>
+      <p class="bg-lgreen text-white text-center font-bold py-1 px-2 rounded-full w-full mt-auto">Discover more</p>
     </div>
   </div>
 </template>
