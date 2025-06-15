@@ -4,9 +4,7 @@
       { label: 'Teachers', to: '/teachers' },
       { label: name }
     ]" />
-    <div class="flex justify-center items-start mb-4">
-      <img class = "w-40 h-40 rounded-full shadow-md" src="teacherItem.image" alt="teacher.image">
-    </div>
+    <img class = "flex justify-center items-start mb-4 w-40 h-40 rounded-full shadow-md" :src="teacherItem.image" alt="teacher.image">
     <Background>
       <div class="container flex-wrap mx-auto gap-10 p-6">
         <div class="flex flex-col items-center md:items-start">
