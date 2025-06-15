@@ -8,7 +8,7 @@
       <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl object-cover mb-4" />
     </div>
     <Background>
-      <div class="container flex-row mx-auto gap-5 p-4">
+      <div class="flex flex-row mx-auto gap-5 p-4">
         <div class="flex flex-col items-center md:items-start mb-4">
           <div class="mt-4">
             <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
