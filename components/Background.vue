@@ -17,8 +17,6 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
-
 defineProps({
   suntitle: {
     type: String,

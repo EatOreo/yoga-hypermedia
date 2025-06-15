@@ -2,40 +2,34 @@
   <div v-if="teacherItem">
     <BreadCrumb :items="[
       { label: 'Teachers', to: '/teachers' },
-      { label: name }
+      { label: teacherItem.name }
     ]" />
-    <div class="flex justify-center items-start mb-4">
-      <img class = "w-40 h-40 rounded-full shadow-md" :src="teacherItem.image" alt="teacher.image">
-    </div>
     <Background>
-      <div class="container flex-wrap mx-auto gap-10 p-6">
-        <div class="flex flex-col items-center md:items-start">
-          <div class="mt-4">
-            <h3 class="text-2xl text-teal-900 font-semibold">{{ teacherItem?.name }}</h3>
-            <p class="italic lgrey mt-2">{{ teacherItem?.quote }}</p>
-            <p class="mt-4 text-gray-700">{{ teacherItem?.description }}</p>
+      <div class="md:flex p-4">
+        <div class="flex-1 p-4">
+            <p class="text-dark text-[32px]">{{ teacherItem.name }}</p>
+          <img :src="teacherItem.image" :alt="teacherItem.name" class="w-full rounded-xl object-cover mb-4" />
+            <p class="text-lgreen text-sm"> {{ teacherItem.quote }} </p>
+          <p class="text-dark pt-4 text-justify">
+            {{ teacherItem.description }}
+          </p>
+          <h3 class="text-lblue mt-8 text-lg pb-2">Teacher Info</h3>
+          <div class="grid grid-cols-[20%_1fr] gap-x-6">
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
+              <p class="text-lgreen text-sm">Contact</p>
+              <p class="text-dark text-sm capitalize">{{ teacherItem?.email }}</p>
+            </div>
           </div>
         </div>
-        <div class="mt-6">
-          <h4 class="text-xl lgreen font-semibold">Contact (email)</h4>
-          <p class="text-gray-600">{{ teacherItem?.email }}</p>
-        </div>
-      </div>
-        <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4">
-          <div>
-            <h3 class="text-xl text-center lgreen font-semibold">Classes</h3>
-          </div>
-          <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
-            <ClassCard v-for="classItem in classes" :key="classItem.title"
-            :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image" />
-          </div>
-        </div>
-        <div class="flex flex-row justify-start items-center flex-nowrap gap-4">
-          <h3 class="text-xl text-center lgreen font-semibold">Events</h3>
-          <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
+        <div class="flex-1 p-4">
+          <h3 class="text-lblue md:mt-8 text-lg pb-2">Classes & Events</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 py-5 border-t border-t-[#dbdbdb]">
+            <ClassCard v-for="classItem in classes" :key="classItem.title" :title="classItem.title"
+              :subtitle="classItem.subtitle" :image="classItem.image" />
             <EventCard v-for="eventItem in events" :key="eventItem.title" :event="eventItem" />
           </div>
         </div>
+      </div>
     </BackGround>
   </div>
   <div v-else class="text-red-700 text-center w-full pt-8 pb-8">
@@ -50,11 +44,6 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
-const teacherid = teacherItem.id
-
-const allclasses = await api.getClasses();
-const allevents = await api.getEvents();
-
-const classes = allclasses.filter(c => c.teacherId === teacherid);
-const events = allevents.filter(e => e.teacherIds?.includes(teacherid));
+const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : null;
+const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : null;
 </script>
