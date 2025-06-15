@@ -21,19 +21,19 @@
           <p class="text-gray-600">{{ teacherItem?.email }}</p>
         </div>
       </div>
-        <div class="flex flex-row justify-start items-center flex-nowrap gap-4">
+        <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4">
           <div>
             <h3 class="text-xl text-center emerald-600 font-semibold">Classes</h3>
           </div>
-          <div class="flex flex-row gap-4 overflow-x-auto">
-            <ClassCard v-for="classItem in classes.filter(c => c.teacherId === teacherItem!.id)" :key="classItem.title"
+          <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
+            <ClassCard v-for="classItem in classes" :key="classItem.title"
             :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image" />
           </div>
         </div>
         <div class="flex flex-row justify-start items-center flex-nowrap gap-4">
           <h3 class="text-xl text-center emerald-600 font-semibold">Events</h3>
-          <div class="flex flex-row gap-4 overflow-x-auto">
-            <EventCard v-for="eventItem in events.filter(e => e.teacherIds?.includes(teacherItem!.id))" :key="eventItem.title" :event="eventItem" />
+          <div class="flex flex-row gap-3 p-4 pb-6 overflow-x-auto">
+            <EventCard v-for="eventItem in events" :key="eventItem.title" :event="eventItem" />
           </div>
         </div>
     </BackGround>
@@ -50,6 +50,6 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
-const classes = await api.getClasses();
-const events = await api.getEvents();
+const classes = await api.getClassesByTeacherId(teacherItem.id);
+const events = await api.getEventsByTeacherId(teacherItem.id);
 </script>
