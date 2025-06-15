@@ -38,7 +38,7 @@ export const allTeachers: TeacherItem[] = [
   },
   {
     id: 4,
-    name: "Liam O'Connor",
+    name: "Liam OConnor",
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=liam",
     description: "Liam brings a playful spirit to his Vinyasa Flow and Yin Yoga classes. He has taught internationally and is known for his creative sequencing and uplifting playlists. Liam believes yoga is a tool for self-discovery and joy.",
     email: "liam.oconnor@yogastudio.com",
