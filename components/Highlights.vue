@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import HighlightCard from './HighlightCard.vue';
 
 const carouselConfig = {
   itemsToShow: 1,
@@ -25,15 +26,18 @@ const carouselConfig = {
   wrapAround: true,
   pauseAutoplayOnHover: true,
 }
-const events = [await api.getEventByTitle("Beach Yoga"), await api.getEventByTitle("Goat Yoga Retreat"), await api.getEventByTitle("Plane Yoga")];
+const events = [await api.getEventByTitle("Beach Yoga"), await api.getEventByTitle("Goat Yoga Retreat"), await api.getEventByTitle("Plane Yoga")].filter(e => !!e);
+const classes = [await api.getClassByTitle("Moonrise Flow")].filter(c => !!c);
 </script>
 
 <template>
   <Carousel v-bind="carouselConfig" class="pb-4 px-8">
-    <Slide v-for="eventItem in events.filter(e => !!e)" :key="eventItem?.title" class="pb-4">
-      <EventCard :event="eventItem!" />
+    <Slide v-for="e in events" :key="e?.title" class="pb-4">
+      <HighlightCard :title="e.title" :image="e.image" :subtitle="e.description" badge="event" :link="'/events/' + e.title"/>
     </Slide>
-
+    <Slide v-for="c in classes" :key="c?.title" class="pb-4">
+      <HighlightCard :title="c.title" :image="c.image" :subtitle="c.subtitle" badge="class" :link="'/classes/' + c.title"/>
+    </Slide>
     <template #addons>
       <Navigation />
       <Pagination />
