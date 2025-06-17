@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="`/events/${encodeURIComponent(event.title)}`" class="block bg-white shadow-md rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer">
-    <img :src="event.image" alt="Event Image" class="w-full h-48 object-cover">
+    <img :src="event.image" alt="Event Image" class="h-48 object-cover">
     <div class="p-4 flex flex-col flex-grow">
       <div class="flex justify-between items-center mb-2">
         <span class="text-xs font-semibold text-white px-2 py-1 rounded-full capitalize"
