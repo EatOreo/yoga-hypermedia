@@ -31,11 +31,11 @@ const classes = [await api.getClassByTitle("Moonrise Flow")].filter(c => !!c);
 </script>
 
 <template>
-  <Carousel v-bind="carouselConfig" class="pb-4 px-8">
-    <Slide v-for="e in events" :key="e?.title" class="pb-4">
+  <Carousel v-bind="carouselConfig" class="px-8">
+    <Slide v-for="e in events" :key="e?.title" class="py-4">
       <HighlightCard :title="e.title" :image="e.image" :subtitle="e.description" badge="event" :link="'/events/' + e.title"/>
     </Slide>
-    <Slide v-for="c in classes" :key="c?.title" class="pb-4">
+    <Slide v-for="c in classes" :key="c?.title" class="py-4">
       <HighlightCard :title="c.title" :image="c.image" :subtitle="c.subtitle" badge="class" :link="'/classes/' + c.title"/>
     </Slide>
     <template #addons>

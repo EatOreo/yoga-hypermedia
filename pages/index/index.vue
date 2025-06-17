@@ -25,7 +25,7 @@
         <div class="flex flex-col items-center border-b border-[#dbdbdb]">
             <h3 class="text-4xl pb-2 text-dark pt-4">Our Highlights:</h3>
         </div>
-        <Highlights class="pt-8 " />>
+        <Highlights class="pt-4 pb-4" />>
     </section>
 
     <section class="bg-primary/5 py-20">

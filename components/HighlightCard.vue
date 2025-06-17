@@ -1,9 +1,12 @@
 <template>
-  <NuxtLink :to="link" class="bg-white shadow-md rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer w-full">
+  <NuxtLink
+    :to="link"
+    class="bg-white shadow-md rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer w-full transition-transform duration-200 hover:scale-102"
+  >
     <img :src="image" alt="Event Image" class="h-48 object-cover">
     <div class="p-4 flex flex-col flex-grow">
       <div class="flex justify-between items-center mb-2">
-      <h3 class="text-xl font-bold mb-2">{{ title }}</h3>
+        <h3 class="text-xl font-bold mb-2">{{ title }}</h3>
         <span class="text-xs font-semibold text-white px-2 py-1 rounded-full capitalize"
           :class="{
             'bg-lblue': badge === 'event',
