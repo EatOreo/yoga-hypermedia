@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                        <img src="/images/beach.png" alt="Yoga practice" class="rounded-2xl w-full h-96 object-cover shadow-lg" />
+                        <img src="/images/home_first_image.jpg" alt="Yoga practice" class="rounded-2xl w-full h-full object-cover shadow-lg" />
                     </div>
                 </div>
             </div>

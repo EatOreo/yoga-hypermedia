@@ -8,7 +8,7 @@
             </div>
             <div class="h-16"></div>
             <div class="mb-20">
-                <img src="/images/beach.png" alt="Yoga Studio" class="rounded-2xl w-full max-w-3xl mx-auto h-[400px] object-cover shadow-lg" style="width: 768px; height: 384px;" />
+                <img src="/images/team_center.jpg" alt="Yoga Studio" class="rounded-2xl w-full max-w-3xl mx-auto h-[400px] object-cover shadow-lg" style="width: 768px; height: 384px;" />
             </div>
             <div class="text-center">
                 <p class="text-gray-600 text-lg">Our journey has been guided by the belief that yoga is more than just physical exercise—it's a path to self-discovery, inner peace, and holistic well-being.</p>
