@@ -47,7 +47,7 @@
       </div>
     </BackGround>
   </div>
-  <div v-else class="text-red-700 text-center w-full pt-8 pb-8">
+  <div v-else class="text-red-500 text-center w-full py-8">
     Sorry, teacher was not found.
   </div>
 </template>
@@ -60,6 +60,6 @@ const name = route.params.name as string
 
 const api = useApi();
 const teacherItem = await api.getTeacherByName(name);
-const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : null;
-const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : null;
+const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : [];
+const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : [];
 </script>

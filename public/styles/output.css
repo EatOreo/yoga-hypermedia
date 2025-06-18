@@ -8,7 +8,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-red-700: oklch(50.5% 0.213 27.518);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-white: #fff;
@@ -252,9 +251,6 @@
       max-width: 96rem;
     }
   }
-  .mx-64 {
-    margin-inline: calc(var(--spacing) * 64);
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -272,9 +268,6 @@
   }
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
-  }
-  .mt-16 {
-    margin-top: calc(var(--spacing) * 16);
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
@@ -614,12 +607,6 @@
   .p-10 {
     padding: calc(var(--spacing) * 10);
   }
-  .p-16 {
-    padding: calc(var(--spacing) * 16);
-  }
-  .p-24 {
-    padding: calc(var(--spacing) * 24);
-  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -628,12 +615,6 @@
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
-  }
-  .px-16 {
-    padding-inline: calc(var(--spacing) * 16);
-  }
-  .px-24 {
-    padding-inline: calc(var(--spacing) * 24);
   }
   .px-32 {
     padding-inline: calc(var(--spacing) * 32);
@@ -683,9 +664,6 @@
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
-  .pt-8 {
-    padding-top: calc(var(--spacing) * 8);
-  }
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
   }
@@ -706,9 +684,6 @@
   }
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
-  }
-  .pb-8 {
-    padding-bottom: calc(var(--spacing) * 8);
   }
   .pb-20 {
     padding-bottom: calc(var(--spacing) * 20);
@@ -798,9 +773,6 @@
   }
   .text-red-500 {
     color: var(--color-red-500);
-  }
-  .text-red-700 {
-    color: var(--color-red-700);
   }
   .text-white {
     color: var(--color-white);
