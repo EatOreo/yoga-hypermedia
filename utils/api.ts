@@ -24,7 +24,7 @@ export function useApi() {
         },
         async getHighlightedClasses(): Promise<ClassItem[]> {
             const cs = await supabase.from('classes')
-                .select('id, title, subtitle, intensity, image')
+                .select('id, title, subtitle, intensity, image, schedule')
                 .eq("highlighted", true);
             return cs.data as ClassItem[];
         },

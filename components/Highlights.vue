@@ -43,7 +43,7 @@ const posts = await api.getHighlightedBlogPosts();
       <HighlightCard :title="e.title" :image="e.image" :subtitle="e.description" badge="event" :link="'/events/' + e.title"/>
     </Slide>
     <Slide v-for="c in classes" :key="c?.title" class="py-4">
-      <HighlightCard :title="c.title" :image="c.image" :subtitle="c.subtitle" badge="class" :link="'/classes/' + c.title"/>
+      <HighlightCard :title="c.title" :image="c.image" :subtitle="c.subtitle + ' Classes on ' + c.schedule + '.'" badge="class" :link="'/classes/' + c.title"/>
     </Slide>
     <template #addons>
       <Navigation />
