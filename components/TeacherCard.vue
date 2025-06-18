@@ -7,16 +7,13 @@ const props = defineProps({
 
 <template>
   <div
-    class="flex flex-col gap-3 cursor-pointer"
+    class="bg-white shadow-md rounded-xl overflow-hidden flex flex-col gap-2 cursor-pointer transition-transform duration-200 hover:scale-102"
     @click="$router.push(`/teachers/${encodeURIComponent(name)}`)"
   >
     <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+      class="w-full bg-center bg-no-repeat aspect-square bg-cover"
       :style="`background-image:url('${image}')`"
     ></div>
-    <div>
-      <p class="text-dark text-base text-center font-medium leading-normal">{{ name }}</p>
-      <p class="bg-lgreen text-white text-center font-bold py-1 px-2 rounded-full w-full mt-auto">Discover more</p>
-    </div>
+      <p class="text-center text-xl font-bold mb-2">{{ name }}</p>
   </div>
 </template>

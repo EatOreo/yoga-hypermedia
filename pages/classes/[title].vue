@@ -23,7 +23,8 @@
             <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-3 items-center">
               <p class="text-lgreen text-sm self-center">Teacher</p>
               <NuxtLink class="text-dark text-sm flex items-center" :to="'/teachers/' + teacher?.name">
-                <img :src="teacher?.image" alt="Teacher Image" class="w-10 h-10 mr-2 rounded-2xl" />
+                <img :src="teacher?.image" alt="Teacher Image"
+                  class="w-10 h-10 mr-2 rounded-2xl transition-transform duration-200 hover:scale-102" />
                 {{ teacher?.name }}
               </NuxtLink>
             </div>
@@ -36,6 +37,12 @@
               <p class="text-dark text-sm"> {{ classItem?.schedule }}
               </p>
             </div>
+
+          </div>
+          <div class="flex flex-col items-center pt-4">
+            <button
+              class="bg-lblue text-white text-lg md:text-xl font-bold py-2 px-8 md:py-4 md:px-10 rounded-full cursor-pointer hover:bg-green-700 transition-colors duration-200">Join
+              Now</button>
           </div>
         </div>
       </div>

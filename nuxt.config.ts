@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Yogaga',
       charset: 'utf-8',
+      htmlAttrs: { lang: 'en' },
       meta: [
         { name: 'description', content: 'Find Your Inner Peace with Yogaga.' },
         { name: 'keywords', content: 'yoga, meditation, mindfulness, wellness, flexibility, relaxation, fitness, breathing, asana, health' }

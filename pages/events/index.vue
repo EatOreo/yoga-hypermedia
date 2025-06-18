@@ -1,5 +1,6 @@
 <template>
   <Background suntitle="Events">
+    <h2 class="text-dark text-2xl p-4 text-center"> Discover our upcoming workshops, retreats, and community events.</h2>
     <Selector :options="[
       { label: 'All Events', query: '' },
       { label: 'Workshops', query: 'workshop' },

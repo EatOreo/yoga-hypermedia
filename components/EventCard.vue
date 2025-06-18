@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink v-if="size === 'normal'" :to="`/events/${encodeURIComponent(event.title)}`" class="block bg-white shadow-md rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer transition-transform duration-200 hover:scale-103">
+  <NuxtLink v-if="size === 'normal'" :to="`/events/${encodeURIComponent(event.title)}`" class="bg-white shadow-md rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer transition-transform duration-200 hover:scale-102">
     <img :src="event.image" alt="Event Image" class="h-48 object-cover">
     <div class="p-4 flex flex-col flex-grow">
       <div class="flex justify-between items-center mb-2">
@@ -13,21 +13,18 @@
         <span class="text-sm text-lgreen">{{ event.date }}</span>
       </div>
       <h3 class="text-xl font-bold mb-2">{{ event.title }}</h3>
-      <p class="text-sm text-dark mb-4 flex-grow">{{ event.description }}</p>
-      <div class="bg-lgreen text-white text-center font-bold py-2 px-4 rounded-full w-full mt-auto">
-        Register Now
-      </div>
+      <p class="text-sm text-dark flex-grow">{{ event.description }}</p>
     </div>
   </NuxtLink>
 
-  <NuxtLink v-else :to="`/events/${encodeURIComponent(event.title)}`" class="flex flex-col gap-3 cursor-pointer transition-transform duration-200 hover:scale-103">
+  <NuxtLink v-else :to="`/events/${encodeURIComponent(event.title)}`" class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col gap-0 cursor-pointer transition-transform duration-200 hover:scale-102">
     <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+      class="w-full bg-center bg-no-repeat aspect-square bg-cover"
       :style="`background-image:url('${event.image}')`"
     ></div>
-    <div>
+    <div class="p-2">
       <p class="text-dark text-base font-medium leading-normal">{{ event.title }}</p>
-      <p class="text-lgreen text-sm font-normal leading-normal capitalize">{{ event.type }} - {{ event.date }}</p>
+      <p class="text-dark text-sm font-normal leading-normal capitalize">{{ event.type }} - {{ event.date }}</p>
     </div>
   </NuxtLink>
 </template>

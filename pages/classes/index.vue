@@ -1,12 +1,13 @@
 <template>
   <Background suntitle="Classes">
+    <h2 class="text-dark text-2xl p-4 text-center"> Discover our wide range of yoga classes for all levels.</h2>
     <Selector :options="[
       { label: 'All Classes', query: '' },
       { label: 'Beginner', query: 'beginner' },
       { label: 'Intermediate', query: 'intermediate' },
       { label: 'Advanced', query: 'advanced' },
     ]" />
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-4 pb-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 p-4 pb-6">
       <ClassCard v-for="classItem in classes.filter(c => !selected || c.intensity === selected)" :key="classItem.title"
         :title="classItem.title" :subtitle="classItem.subtitle" :image="classItem.image" />
     </div>

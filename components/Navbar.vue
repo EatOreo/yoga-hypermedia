@@ -1,7 +1,7 @@
 <template>
   <header class="z-30 flex md:px-10 h-20 py-2 bg-lgreen items-center">
     <NuxtLink to="/">
-      <div class="md:pl-10 flex items-center text-dark">
+      <div class="md:pl-10 flex items-center text-dark cursor-pointer">
         <icon />
         <h2 class="text-dark text-3xl">Yogaga </h2>
       </div>

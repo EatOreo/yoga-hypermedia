@@ -13,6 +13,8 @@
           </svg>
         </a>
         <p>|</p>
+      <NuxtLink to="/aboutus" class="pt-1 text-sm">About Us</NuxtLink> 
+        <p>|</p>
       <NuxtLink to="/contacts" class="pt-1 text-sm">Contacts</NuxtLink> 
       </div>
       <p class="py-2 w-full text-center">&copy; 2025 Yogaga.</p>

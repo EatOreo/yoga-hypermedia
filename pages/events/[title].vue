@@ -5,7 +5,7 @@
       { label: event.title }
     ]" />
     <div class="py-4">
-      <div class="max-w-6xl mx-auto bg-white overflow-hidden">
+      <div class="max-w-6xl mx-auto bg-white overflow-hidden rounded-3xl shadow-lg ">
         <div class="md:flex">
           <div class="md:w-1/2 p-4 md:p-8 flex items-center justify-center">
             <img class="rounded-3xl shadow-lg object-cover w-full h-full" :src="event.detailsImage || event.image" :alt="event.title">
@@ -21,12 +21,12 @@
             <h1 class="text-dark text-3xl md:text-4xl font-bold leading-tight mb-4">{{ event.title }}</h1>
             <p class="text-dark text-base mb-8">{{ event.longDescription || event.description }}</p>
             
-            <button class="bg-lgreen text-white text-lg md:text-xl font-bold py-3 px-8 md:py-4 md:px-10 rounded-full self-center">Join Now</button>
+            <button class="bg-lblue text-white text-lg md:text-xl font-bold py-3 px-8 md:py-4 md:px-10 rounded-full self-center cursor-pointer hover:bg-green-700 transition-colors duration-200">Join Now</button>
           </div>
         </div>
       </div>
 
-      <div v-if="event.location" class="max-w-5xl mx-auto bg-white rounded-3xl shadow-lg my-10 border border-[#9C7A4A]">
+      <div v-if="event.location" class="max-w-5xl mx-auto bg-white rounded-3xl shadow-lg my-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 p-6 md:p-10">
           <div>
               <h3 class="text-lblue text-2xl md:text-3xl mb-2">Location</h3>
