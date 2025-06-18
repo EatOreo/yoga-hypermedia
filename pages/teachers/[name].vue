@@ -23,23 +23,38 @@
           </div>
         </div>
 
-        <div v-if="classes && classes.length > 0" class="mt-8 pt-4 border-t-2 border-dark/20">
-          <h2 class="text-lblue text-xl font-semibold mb-4">Classes</h2>
-          <div class="flex overflow-x-auto gap-4 pb-4">
-            <div v-for="classItem in classes" :key="classItem.id" class="flex-shrink-0 w-48">
-              <ClassCard :title="classItem.title" :subtitle="classItem.subtitle" :image="classItem.image" />
+        <div v-if="(classes && classes.length > 0) || (events && events.length > 0)" class="mt-8 pt-4 border-t-2 border-dark/20">
+          <div class="flex border-b border-gray-200">
+            <button
+              v-if="classes && classes.length > 0"
+              @click="selectedTab = 'classes'"
+              :class="['py-2 px-4 text-lg font-semibold', selectedTab === 'classes' ? 'border-b-2 border-lblue text-lblue' : 'text-gray-500 hover:text-lblue']"
+            >
+              Classes
+            </button>
+            <button
+              v-if="events && events.length > 0"
+              @click="selectedTab = 'events'"
+              :class="['py-2 px-4 text-lg font-semibold', selectedTab === 'events' ? 'border-b-2 border-lblue text-lblue' : 'text-gray-500 hover:text-lblue']"
+            >
+              Events
+            </button>
+          </div>
+
+          <div class="py-4">
+            <div v-show="selectedTab === 'classes'">
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <ClassCard v-for="classItem in classes" :key="classItem.id" :title="classItem.title" :subtitle="classItem.subtitle" :image="classItem.image" />
+              </div>
+            </div>
+            <div v-show="selectedTab === 'events'">
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <EventCard v-for="eventItem in events" :key="eventItem.title" :event="eventItem" size="small" />
+              </div>
             </div>
           </div>
         </div>
 
-        <div v-if="events && events.length > 0" class="mt-8 pt-4 border-t-2 border-dark/20">
-          <h2 class="text-lblue text-xl font-semibold mb-4">Events</h2>
-          <div class="flex overflow-x-auto gap-4 pb-4">
-            <div v-for="eventItem in events" :key="eventItem.title" class="flex-shrink-0 w-64">
-              <EventCard :event="eventItem" />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -50,6 +65,7 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
+import { ref } from 'vue'
 
 const api = useApi();
 const route = useRoute()
@@ -58,4 +74,6 @@ const name = route.params.name as string
 const teacherItem = await api.getTeacherByName(name);
 const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : [];
 const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : [];
+
+const selectedTab = ref((classes && classes.length > 0) ? 'classes' : 'events');
 </script>
