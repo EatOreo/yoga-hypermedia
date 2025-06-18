@@ -4,50 +4,46 @@
       { label: 'Teachers', to: '/teachers' },
       { label: teacherItem.name }
     ]" />
-    <div class="flex items-center justify-center">
-      <img :src="teacherItem.image" :alt="teacherItem.name" class="rounded-xl h-2/3 w-2/3  md:h-1/2 md:w-1/2 lg:h-1/3 lg:w-1/3 object-cover mb-4" />
-    </div>
-    <Background>
-      <div class="flex p-4">
-        <div class="flex flex-row items-center mx-auto gap-5 pb-4 border-b-2 border-lgreen">
-          <div class="flex lg:w-2/3 flex-col items-center md:items-start">
-            <div class="mt-4">
-              <h3 class="text-dark text-[32px]">{{ teacherItem?.name }}</h3>
-              <p class="text-lgreen text-sm">{{ teacherItem?.quote }}</p>
-              <p class="text-dark w-full pt-4 text-justify">{{ teacherItem?.description }}</p>
+    <div class="container mx-auto px-4 py-8">
+      <div class="relative mb-8 h-48">
+        <img :src="teacherItem.image" :alt="teacherItem.name" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] object-cover rounded-[40px] shadow-lg" />
+      </div>
+      <div class="bg-bright shadow-lg rounded-2xl p-5">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="flex flex-col">
+            <h1 class="text-dark text-3xl font-bold">{{ teacherItem.name }}</h1>
+            <p class="text-lgreen italic my-4">“{{ teacherItem.quote }}”</p>
+            <div class="border-t border-b border-dark/20 py-4">
+              <p class="text-dark text-justify">{{ teacherItem.description }}</p>
             </div>
           </div>
-          <div class="flex flex-col items-center justify-center mb-4 flex-shrink-2">
-            <p class="text-lgreen text-align text-lg">Contact</p>
-            <p class="border rounded-full px-4 py-0 opacity-100
-            shadow-md text-md lowercase font-bold bg-lgreen text-white-100 shadow-white-500/50">{{ teacherItem?.email }}
-            </p>
+          <div class="flex flex-col items-center justify-center">
+            <h3 class="text-lblue text-2xl mb-2">Contact</h3>
+            <a :href="'mailto:' + teacherItem.email" class="bg-lgreen text-white text-lg font-bold py-2 px-6 rounded-full ">{{ teacherItem.email }}</a>
+          </div>
+        </div>
+
+        <div v-if="classes && classes.length > 0" class="mt-8 pt-4 border-t-2 border-dark/20">
+          <h2 class="text-lblue text-xl font-semibold mb-4">Classes</h2>
+          <div class="flex overflow-x-auto gap-4 pb-4">
+            <div v-for="classItem in classes" :key="classItem.id" class="flex-shrink-0 w-48">
+              <ClassCard :title="classItem.title" :subtitle="classItem.subtitle" :image="classItem.image" />
+            </div>
+          </div>
+        </div>
+
+        <div v-if="events && events.length > 0" class="mt-8 pt-4 border-t-2 border-dark/20">
+          <h2 class="text-lblue text-xl font-semibold mb-4">Events</h2>
+          <div class="flex overflow-x-auto gap-4 pb-4">
+            <div v-for="eventItem in events" :key="eventItem.title" class="flex-shrink-0 w-64">
+              <EventCard :event="eventItem" />
+            </div>
           </div>
         </div>
       </div>
-      <div v-if="classes" class="flex flex-row justify-start items-center flex-nowrap gap-4 px-4">
-        <div>
-          <h3 class="text-xl text-center text-lgreen font-semibold">Classes</h3>
-        </div>
-        <div class="flex flex-row gap-3 p-4 overflow-x-auto">
-          <div v-for="classItem in classes" :key="classItem.title" class="w-40 flex-shrink-0">
-            <ClassCard :title="classItem.title" :subtitle="classItem.subtitle" :intensity="classItem.intensity" :image="classItem.image"/>
-          </div>
-        </div>
-      </div>
-      <div v-if="events" class="flex flex-row justify-start items-center flex-nowrap gap-4 px-4">
-        <div>
-          <h3 class="text-xl text-center text-lgreen font-semibold">Events</h3>
-        </div>
-        <div class="flex flex-row gap-3 p-4 overflow-x-auto">
-          <div v-for="eventItem in events" :key="eventItem.title" class="w-60 flex-shrink-0">
-            <EventCard :event="eventItem"/>
-          </div>
-        </div>
-      </div>
-    </BackGround>
+    </div>
   </div>
-  <div v-else class="text-red-700 text-center w-full pt-8 pb-8">
+  <div v-else class="text-red-500 text-center w-full py-8">
     Sorry, teacher was not found.
   </div>
 </template>
@@ -55,11 +51,11 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
 
+const api = useApi();
 const route = useRoute()
 const name = route.params.name as string
 
-const api = useApi();
 const teacherItem = await api.getTeacherByName(name);
-const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : null;
-const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : null;
+const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : [];
+const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : [];
 </script>
