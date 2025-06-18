@@ -59,7 +59,8 @@ export function useApi() {
         },
         async getEvents(): Promise<EventItem[]> {
             const es = await supabase.from('events')
-                .select('title, image, type, date, description');
+                .select('title, image, type, date, description')
+                .order('date', { ascending: true });
             return es.data as EventItem[];
         },
         async getHighlightedEvents(): Promise<EventItem[]> {
