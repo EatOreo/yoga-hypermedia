@@ -2,7 +2,7 @@
     <Background v-if="posts" suntitle="Blog">
         <div class="p-4">
             <NuxtLink :to="'/blog/' + posts[0].title" class="block cursor-pointer">
-              <div class="featured-article bg-white rounded-xl shadow-lg overflow-hidden mb-12 transition-transform duration-200 hover:scale-102">
+              <div class="featured-article bg-white rounded-xl shadow-lg overflow-hidden mb-8 transition-transform duration-200 hover:scale-102">
                   <div class="md:flex">
                       <div class="md:w-1/2 p-6">
                           <img :src="posts[0].image" alt="Featured Article" class="h-64 md:h-full w-full object-cover rounded-lg" />
@@ -17,7 +17,6 @@
               </div>
             </NuxtLink>
         </div>
-        <div class="h-20"></div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
             <NuxtLink v-for="p in posts.slice(1)" :key="p.title" :to="'/blog/' + p.title" class="block cursor-pointer">
@@ -36,6 +35,10 @@
 </template>
 
 <script lang="ts" setup>
+useSeoMeta({
+    title: 'Yogaga Blog',
+    description: 'Discover our latest articles, tips, and insights on yoga, wellness, and mindful living.',
+});
 
 const posts = await useApi().getBlogPosts();
 

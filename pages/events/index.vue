@@ -14,6 +14,11 @@
 </template>
 
 <script lang="ts" setup>
+useSeoMeta({
+  title: 'Yogaga Events',
+  description: 'Discover our upcoming workshops, retreats, and community events at Yogaga. Join us to deepen your practice and connect with others.',
+});
+
 import { computed } from 'vue'
 import { useRoute } from 'vue-router';
 

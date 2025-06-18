@@ -14,6 +14,11 @@
 </template>
 
 <script lang="ts" setup>
+useSeoMeta({
+  title: 'Yogaga Classes',
+  description: 'Discover our wide range of yoga classes for all levels, from beginner to advanced. Find the perfect class to suit your needs and experience the benefits of yoga with Yogaga.',
+});
+
 import { computed } from 'vue'
 import { useRoute } from 'vue-router';
 
