@@ -1,13 +1,13 @@
-import { allClasses, type ClassItem } from "~/utils/types/class-item";
-import { allTeachers, type TeacherItem } from "~/utils/types/teacher-item";
+import { type ClassItem } from "~/utils/types/class-item";
+import { type TeacherItem } from "~/utils/types/teacher-item";
 import { allEvents, type EventItem } from "~/utils/types/event-item";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 let supabase: SupabaseClient | null = null
 
 export function useSupabaseClient() {
-  const config = useRuntimeConfig()
   if (!supabase) {
+    const config = useRuntimeConfig()
     supabase = createClient(config.public.supabaseUrl, config.public.supabaseAnonKey);
   }
   return supabase
@@ -20,6 +20,10 @@ export function useApi() {
     const api = {
         async getClasses(): Promise<ClassItem[]> {
             const cs = await supabase.from('classes').select('id, title, subtitle, intensity, image');
+            return cs.data as ClassItem[];
+        },
+        async getHighlightedClasses(): Promise<ClassItem[]> {
+            const cs = await supabase.from('classes').select('id, title, subtitle, intensity, image').eq("highlighted", true);
             return cs.data as ClassItem[];
         },
         async getClassesByTeacherId(id: number): Promise<ClassItem[] | undefined> {
@@ -35,22 +39,32 @@ export function useApi() {
             return (c.data as ClassItem[])[0]
         },
         async getTeachers(): Promise<TeacherItem[]> {
-            return allTeachers;
+            const ts = await supabase.from('teachers').select('id, name, image');
+            return ts.data as TeacherItem[];
         },
         async getTeacherById(id: number): Promise<TeacherItem | undefined> {
-            return allTeachers.find(t => t.id === id);
+            const t = await supabase.from('teachers').select('*')
+                .eq('id', id);
+            return (t.data as TeacherItem[])[0];
         },
         async getTeacherByName(name: string): Promise<TeacherItem | undefined> {
-            return allTeachers.find(t => t.name === name);
+            const t = await supabase.from('teachers').select('*')
+                .eq('name', name);
+            return (t.data as TeacherItem[])[0];
         },
         async getEvents(): Promise<EventItem[]> {
-            return allEvents;
+            const es = await supabase.from('events').select('title, image, type, date, description');
+            return es.data as EventItem[];
         },
         async getEventByTitle(title: string): Promise<EventItem | undefined> {
-            return allEvents.find(e => e.title === title);
+            const e = await supabase.from('events').select('*')
+                .eq('title', title);
+            return (e.data as EventItem[])[0];
         },
         async getEventsByTeacherId(id: number): Promise<EventItem[] | undefined> {
-            return allEvents.filter(e => e.teacherIds?.includes(id));
+            const e = await supabase.from('events').select('*')
+                .contains('teacherIds', id.toString());
+            return (e.data as EventItem[]);
         }
     };
     return api;

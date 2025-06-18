@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div v-if="classes.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 px-4">
+      <div v-if="classes" class="flex flex-row justify-start items-center flex-nowrap gap-4 px-4">
         <div>
           <h3 class="text-xl text-center text-lgreen font-semibold">Classes</h3>
         </div>
@@ -35,7 +35,7 @@
           </div>
         </div>
       </div>
-      <div v-if="events.length > 0" class="flex flex-row justify-start items-center flex-nowrap gap-4 px-4">
+      <div v-if="events" class="flex flex-row justify-start items-center flex-nowrap gap-4 px-4">
         <div>
           <h3 class="text-xl text-center text-lgreen font-semibold">Events</h3>
         </div>
