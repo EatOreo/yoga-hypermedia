@@ -14,6 +14,11 @@
           <p class="text-dark pt-4 text-justify">
             {{ classItem?.description }}
           </p>
+          <div class="flex flex-col items-center pt-4">
+            <button
+              class="bg-lblue text-white text-lg md:text-xl font-bold py-2 px-8 md:py-4 md:px-10 rounded-full cursor-pointer hover:bg-green-700 transition-colors duration-200">Join
+              Now</button>
+          </div>
         </div>
         <div class="flex-1 p-4">
           <img :src="classItem?.image" alt="Class Image" class="w-full rounded-xl object-cover mb-4" />
@@ -37,12 +42,11 @@
               <p class="text-dark text-sm"> {{ classItem?.schedule }}
               </p>
             </div>
-
-          </div>
-          <div class="flex flex-col items-center pt-4">
-            <button
-              class="bg-lblue text-white text-lg md:text-xl font-bold py-2 px-8 md:py-4 md:px-10 rounded-full cursor-pointer hover:bg-green-700 transition-colors duration-200">Join
-              Now</button>
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbdbdb] py-5">
+              <p class="text-lgreen text-sm">Price/Month</p>
+              <p class="text-dark text-sm"> {{ classItem?.price }}
+              </p>
+            </div>
           </div>
         </div>
       </div>

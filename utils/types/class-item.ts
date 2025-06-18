@@ -7,4 +7,5 @@ export interface ClassItem {
   description: string
   schedule: string
   teacherId: number
+  price: string
 }
