@@ -82,7 +82,7 @@ export function useApi() {
         },
         async getBlogPosts(): Promise<BlogItem[] | undefined> {
             const ps = await supabase.from('blogs')
-                .select('*')
+                .select('title, date, image, teaser')
                 .order('id');
             return ps.data as BlogItem[];
         },
