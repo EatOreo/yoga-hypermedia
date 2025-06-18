@@ -31,10 +31,14 @@ const carouselConfig = {
 const api = useApi();
 const events = await api.getHighlightedEvents();
 const classes = await api.getHighlightedClasses();
+const posts = await api.getHighlightedBlogPosts();
 </script>
 
 <template>
   <Carousel v-bind="carouselConfig" class="px-8">
+    <Slide v-for="p in posts" :key="p?.title" class="py-4">
+      <HighlightCard :title="p.title" :image="p.image" :subtitle="p.teaser" badge="blog" :link="'/blog/' + p.title"/>
+    </Slide>
     <Slide v-for="e in events" :key="e?.title" class="py-4">
       <HighlightCard :title="e.title" :image="e.image" :subtitle="e.description" badge="event" :link="'/events/' + e.title"/>
     </Slide>

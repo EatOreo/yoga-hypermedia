@@ -86,6 +86,12 @@ export function useApi() {
                 .order('id');
             return ps.data as BlogItem[];
         },
+        async getHighlightedBlogPosts(): Promise<BlogItem[] | undefined> {
+            const ps = await supabase.from('blogs')
+                .select('title, date, image, teaser')
+                .eq('highlighted', true)
+            return ps.data as BlogItem[];
+        },
         async getBlogByTitle(title: string): Promise<BlogItem | undefined> {
             const p = await supabase.from('blogs')
                 .select('*')

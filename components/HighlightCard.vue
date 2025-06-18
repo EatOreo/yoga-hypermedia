@@ -11,6 +11,7 @@
           :class="{
             'bg-lblue': badge === 'event',
             'bg-lgreen': badge === 'class',
+            'bg-lorange': badge === 'blog',
           }"
         >{{ badge }}</span>
       </div>
