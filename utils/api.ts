@@ -1,6 +1,6 @@
 import { type ClassItem } from "~/utils/types/class-item";
 import { type TeacherItem } from "~/utils/types/teacher-item";
-import { allEvents, type EventItem } from "~/utils/types/event-item";
+import { type EventItem } from "~/utils/types/event-item";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 let supabase: SupabaseClient | null = null
