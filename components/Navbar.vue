@@ -14,7 +14,7 @@
         <NuxtLink class="text-dark text-md font-medium" to="/teachers">Teachers</NuxtLink>
         <NuxtLink class="text-dark text-md font-medium" to="/blog">Blog</NuxtLink>
         <NuxtLink class="text-dark text-md font-medium" to="/aboutus">About Us</NuxtLink>
-        <NuxtLink class="text-dark text-md font-medium" to="/contacts">Contacts</NuxtLink>
+        <NuxtLink class="text-dark text-md font-medium" to="/contacts">Contact Us</NuxtLink>
       </div>
       <button class="md:hidden mr-4" @click="open = !open">
         <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@
         <NuxtLink class="text-dark text-md font-medium" to="/teachers" @click="open = false">Teachers</NuxtLink>
         <NuxtLink class="text-dark text-md font-medium" to="/blog" @click="open = false">Blog</NuxtLink>
         <NuxtLink class="text-dark text-md font-medium" to="/aboutus" @click="open = false">About Us</NuxtLink>
-        <NuxtLink class="text-dark text-md font-medium" to="/contacts" @click="open = false">Contacts</NuxtLink>
+        <NuxtLink class="text-dark text-md font-medium" to="/contacts" @click="open = false">Contact Us</NuxtLink>
       </div>
     </div>
   </header>
