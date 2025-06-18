@@ -29,7 +29,7 @@ const carouselConfig = {
   pauseAutoplayOnHover: true,
 } as const;
 const api = useApi();
-const events = [await api.getEventByTitle("Beach Yoga"), await api.getEventByTitle("Goat Yoga Retreat"), await api.getEventByTitle("Plane Yoga")].filter(e => !!e);
+const events = await api.getHighlightedEvents();
 const classes = await api.getHighlightedClasses();
 </script>
 

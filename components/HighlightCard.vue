@@ -22,10 +22,10 @@
 <script lang="ts" setup>
 
 defineProps<{
-  title: String,
-  subtitle: String,
-  image: String,
-  badge: String,
-  link: String,
+  title: string,
+  subtitle: string,
+  image: string,
+  badge: string,
+  link: string,
 }>()
 </script>
