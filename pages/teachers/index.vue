@@ -15,5 +15,5 @@ import { useRoute } from 'vue-router';
 const route = useRoute();
 const selected = computed(() => (route.query.select as string) || '');
 
-const teachers = await api.getTeachers();
+const teachers = await useApi().getTeachers();
 </script>

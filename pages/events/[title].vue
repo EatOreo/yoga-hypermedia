@@ -64,13 +64,13 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
-import api from '~/utils/api'
 import type { TeacherItem } from '~/utils/types/teacher-item';
 import { ref } from 'vue';
 
 const route = useRoute()
 const title = route.params.title as string
 
+const api = useApi();
 const event = await api.getEventByTitle(title)
 
 const teachers = ref<TeacherItem[]>([]);

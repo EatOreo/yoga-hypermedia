@@ -58,6 +58,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const name = route.params.name as string
 
+const api = useApi();
 const teacherItem = await api.getTeacherByName(name);
 const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : null;
 const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : null;

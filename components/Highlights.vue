@@ -8,6 +8,7 @@ const carouselConfig = {
   breakpoints: {
     640: {
       itemsToShow: 1,
+      snapAlign: 'center',
     },
     768: {
       itemsToShow: 2,
@@ -15,6 +16,7 @@ const carouselConfig = {
     },
     1024: {
       itemsToShow: 3,
+      snapAlign: 'center',
     },
     1280: {
       itemsToShow: 4,
@@ -26,6 +28,7 @@ const carouselConfig = {
   wrapAround: true,
   pauseAutoplayOnHover: true,
 }
+const api = useApi();
 const events = [await api.getEventByTitle("Beach Yoga"), await api.getEventByTitle("Goat Yoga Retreat"), await api.getEventByTitle("Plane Yoga")].filter(e => !!e);
 const classes = [await api.getClassByTitle("Moonrise Flow")].filter(c => !!c);
 </script>

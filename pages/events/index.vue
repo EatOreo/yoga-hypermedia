@@ -16,11 +16,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router';
-import api from '~/utils/api';
-import type { EventItem } from '~/utils/types/event-item';
 
 const route = useRoute();
 const selected = computed(() => (route.query.select as string) || '');
 
-const events = await api.getEvents();
+const events = await useApi().getEvents();
 </script>
