@@ -19,14 +19,20 @@ export function useApi() {
     //TODO: maybe use a store or something to cache the database fetches since they
     const api = {
         async getClasses(): Promise<ClassItem[]> {
-            const classes = await supabase.from('classes').select('*');
-            return classes.data as ClassItem[];
+            const cs = await supabase.from('classes').select('id, title, subtitle, intensity, image');
+            return cs.data as ClassItem[];
         },
         async getClassesByTeacherId(id: number): Promise<ClassItem[] | undefined> {
-            return allClasses.filter(c => c.teacherId === id);
+            const cs = await supabase.from('classes')
+                .select('id, title, subtitle, intensity, image')
+                .eq('teacherId', id);
+            return cs.data as ClassItem[];
         },
         async getClassByTitle(title: string): Promise<ClassItem | undefined> {
-            return allClasses.find(c => c.title === title);
+            const c = await supabase.from('classes')
+                .select('*')
+                .eq('title', title);
+            return (c.data as ClassItem[])[0]
         },
         async getTeachers(): Promise<TeacherItem[]> {
             return allTeachers;
