@@ -1,11 +1,20 @@
 import { allClasses, type ClassItem } from "~/utils/types/class-item";
 import { allTeachers, type TeacherItem } from "~/utils/types/teacher-item";
 import { allEvents, type EventItem } from "~/utils/types/event-item";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
+
+let supabase: SupabaseClient | null = null
+
+export function useSupabaseClient() {
+  const config = useRuntimeConfig()
+  if (!supabase) {
+    supabase = createClient(config.public.supabaseUrl, config.public.supabaseAnonKey);
+  }
+  return supabase
+}
 
 export function useApi() {
-    const config = useRuntimeConfig();
-    const supabase = createClient(config.public.supabaseUrl, config.public.supabaseAnonKey);
+    const supabase = useSupabaseClient();
 
     //TODO: maybe use a store or something to cache the database fetches since they
     const api = {
