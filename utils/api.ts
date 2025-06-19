@@ -7,7 +7,7 @@ import type { BlogItem } from "./types/blog-item";
 let supabase: SupabaseClient | null = null
 
 export function useSupabaseClient() {
-  if (!supabase) {
+  if (!supabase) { // ensure theres only one instance of the supabase client
     const config = useRuntimeConfig()
     supabase = createClient(config.public.supabaseUrl, config.public.supabaseAnonKey);
   }
