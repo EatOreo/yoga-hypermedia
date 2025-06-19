@@ -14,13 +14,13 @@ export function useSupabaseClient() {
   return supabase
 }
 
-export function useApi() {
+export function useApi() { // we create a hook to have a single, reusable, composable api client across the app
     const supabase = useSupabaseClient();
     const api = {
         async getClasses(): Promise<ClassItem[]> {
             const cs = await supabase.from('classes')
-                .select('id, title, subtitle, intensity, image');
-            return cs.data as ClassItem[];
+                .select('id, title, subtitle, intensity, image'); // query database
+            return cs.data as ClassItem[]; // cast to typesafe object
         },
         async getHighlightedClasses(): Promise<ClassItem[]> {
             const cs = await supabase.from('classes')

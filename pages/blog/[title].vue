@@ -19,6 +19,7 @@
 const route = useRoute()
 const title = route.params.title as string
 
+// fetch the blog post of the url path
 const api = useApi();
 const post = await api.getBlogByTitle(title)
 </script>

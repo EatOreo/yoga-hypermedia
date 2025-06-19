@@ -63,7 +63,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute() // get title of class from /classes/[title]
 const title = route.params.title as string
 
-const api = useApi(); // fetch from supabase;
+const api = useApi(); // fetch from supabase
 const classItem = await api.getClassByTitle(title);
 const teacher = classItem ? await api.getTeacherById(classItem!.teacherId) : null;
 </script>

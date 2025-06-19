@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-useHead({
+useHead({ // here head for entire page is defined
   title: 'Yogaga',
   link: [
     { rel: 'stylesheet', href: '/yoga-hypermedia/styles/output.css' },

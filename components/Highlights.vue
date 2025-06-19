@@ -5,7 +5,7 @@ import HighlightCard from './HighlightCard.vue';
 
 const carouselConfig = {
   itemsToShow: 1,
-  breakpoints: {
+  breakpoints: { // with this the amount of items shown will depend on the screen size
     640: {
       itemsToShow: 1,
       snapAlign: 'center',
@@ -28,6 +28,8 @@ const carouselConfig = {
   wrapAround: true,
   pauseAutoplayOnHover: true,
 } as const;
+
+// fetch highlights from different topics
 const api = useApi();
 const events = await api.getHighlightedEvents();
 const classes = await api.getHighlightedClasses();
@@ -36,6 +38,7 @@ const posts = await api.getHighlightedBlogPosts();
 
 <template>
   <Carousel v-bind="carouselConfig" class="px-8">
+    <!-- same card, different topics -->
     <Slide v-for="p in posts" :key="p?.title" class="py-4">
       <HighlightCard :title="p.title" :image="p.image" :subtitle="p.teaser" badge="blog" :link="'/blog/' + p.title"/>
     </Slide>

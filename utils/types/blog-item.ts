@@ -1,3 +1,4 @@
+// Blog entity matching the table stored in the db
 export interface BlogItem {
   id: number
   title: string

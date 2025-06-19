@@ -1,6 +1,8 @@
 <template>
     <Background v-if="posts" suntitle="Blog">
         <h2 class="text-dark text-2xl p-4 text-center"> Expand your horizons.</h2>
+
+        <!-- featured post card -->
         <div class="p-4">
             <NuxtLink :to="'/blog/' + posts[0].title" class="block cursor-pointer">
                 <div
@@ -21,6 +23,7 @@
             </NuxtLink>
         </div>
 
+        <!-- remaining posts card -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
             <NuxtLink v-for="p in posts.slice(1)" :key="p.title" :to="'/blog/' + p.title" class="block cursor-pointer">
                 <article
@@ -44,7 +47,7 @@ useSeoMeta({
     description: 'Discover our latest articles, tips, and insights on yoga, wellness, and mindful living.',
 });
 
-import { format } from 'date-fns'
+import { format } from 'date-fns' // for formatting the date nicely
 
 const posts = await useApi().getBlogPosts();
 

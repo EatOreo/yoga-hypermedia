@@ -1,3 +1,4 @@
+// Teacher entity matching the table stored in the db
 export interface TeacherItem {
   id: number
   name: string

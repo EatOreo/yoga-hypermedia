@@ -1,3 +1,4 @@
+// Class entity matching the table stored in the db
 export interface EventItem {
   title: string;
   type: 'workshop' | 'retreat' | 'community';

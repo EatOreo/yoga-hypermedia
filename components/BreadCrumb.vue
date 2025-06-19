@@ -8,6 +8,7 @@
         <span v-else class="text-dark">
           {{ item.label }}
         </span>
+        <!-- last item is showed differently (the current page) -->
         <span v-if="idx < items.length - 1" class="text-lgreen">/</span>
       </template>
     </div>
