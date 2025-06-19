@@ -1,12 +1,13 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+  // RENDERING MODE: SSG
+  ssr: true, // since the build preset github_pages makes static pages we are really using SSG
   nitro: {
     preset: 'github_pages',
   },
   app: {
-    baseURL: '/yoga-hypermedia/', 
+    baseURL: '/yoga-hypermedia/',
     head: {
       title: 'Yogaga',
       charset: 'utf-8',
