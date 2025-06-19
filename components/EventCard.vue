@@ -34,7 +34,6 @@
 <script lang="ts" setup>
 import type { EventItem } from '~/utils/types/event-item';
 import { format } from 'date-fns'
-import { de } from 'date-fns/locale'
 
 withDefaults(defineProps<{
   event: EventItem,
