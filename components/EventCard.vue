@@ -23,8 +23,8 @@
       :style="`background-image:url('${event.image}')`"
     ></div>
     <div class="p-2">
-      <p class="text-dark text-base font-medium leading-normal">{{ event.title }}</p>
-      <p class="text-dark text-sm font-normal leading-normal capitalize">{{ event.type }} - {{ event.date }}</p>
+      <p class="text-dark text-lg font-bold">{{ event.title }}</p>
+      <p class="text-dark text-sm capitalize">{{ event.type }} - {{ event.date }}</p>
     </div>
   </NuxtLink>
 </template>

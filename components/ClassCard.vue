@@ -16,8 +16,8 @@ const props = defineProps({
       :style="`background-image:url('${image}')`"
     ></div>
     <div class="px-2 pb-2">
-      <p class="text-dark text-base font-medium leading-normal">{{ title }}</p>
-      <p class="text-dark text-sm font-normal leading-normal">{{ subtitle }}</p>
+      <p class="text-dark text-lg font-bold">{{ title }}</p>
+      <p class="text-dark text-sm">{{ subtitle }}</p>
     </div>
   </div>
 </template>

@@ -14,9 +14,9 @@
           <p class="text-dark pt-4 text-justify">
             {{ classItem?.description }}
           </p>
-          <div class="flex flex-col items-center pt-4">
+          <div class="flex flex-col items-center pt-6">
             <button
-              class="bg-lblue text-white text-lg md:text-xl font-bold py-2 px-8 md:py-4 md:px-10 rounded-full cursor-pointer hover:bg-green-700 transition-colors duration-200">Join
+              class="bg-lblue text-white text-lg md:text-xl font-bold py-4 px-8 md:py-4 md:px-10 rounded-full cursor-pointer hover:bg-green-700 transition-colors duration-200">Join
               Now</button>
           </div>
         </div>
