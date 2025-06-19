@@ -10,7 +10,9 @@
             'bg-lgreen': event.type === 'community',
           }"
         >{{ event.type }}</span>
-        <span class="text-sm text-lgreen">{{ event.date }}</span>
+        <span class="text-sm text-lgreen">
+          {{ format(new Date(event.date), 'd. MMMM yyyy') }}
+        </span>
       </div>
       <h3 class="text-xl font-bold mb-2">{{ event.title }}</h3>
       <p class="text-sm text-dark flex-grow">{{ event.description }}</p>
@@ -31,6 +33,8 @@
 
 <script lang="ts" setup>
 import type { EventItem } from '~/utils/types/event-item';
+import { format } from 'date-fns'
+import { de } from 'date-fns/locale'
 
 withDefaults(defineProps<{
   event: EventItem,
