@@ -1,78 +1,76 @@
+Live at https://eatoreo.github.io/yoga-hypermedia/
+
+## For development:
+Create .env file in root of project with supabase connection variables:
+```
+NUXT_PUBLIC_SUPABASE_URL="..."
+NUXT_PUBLIC_SUPABASE_ANON_KEY="..."
+```
+```bash
+npm install
+npm run dev
+```
+Separate terminal:
 ```bash
 npx @tailwindcss/cli -i ./input.css -o ./public/styles/output.css --watch
 ```
-# Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+These are the db tables expected by the client:
+```sql
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
 
-## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+CREATE TABLE public.blogs (
+  id bigint NOT NULL,
+  title text NOT NULL UNIQUE,
+  author text,
+  date date,
+  body text,
+  image text,
+  teaser text,
+  highlighted boolean NOT NULL DEFAULT false,
+  CONSTRAINT blogs_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.classes (
+  id bigint NOT NULL,
+  title text NOT NULL UNIQUE,
+  subtitle text,
+  intensity text,
+  image text,
+  description text,
+  schedule text,
+  teacherId bigint,
+  highlighted boolean NOT NULL DEFAULT false,
+  price text DEFAULT '€40'::text,
+  CONSTRAINT classes_pkey PRIMARY KEY (id),
+  CONSTRAINT classes_teacherId_fkey FOREIGN KEY (teacherId) REFERENCES public.teachers(id)
+);
+CREATE TABLE public.events (
+  title text NOT NULL UNIQUE,
+  type text,
+  date text NOT NULL,
+  duration text,
+  description text,
+  image text,
+  longDescription text,
+  detailsImage text,
+  location text,
+  price text,
+  whoIsThisFor text,
+  id bigint NOT NULL,
+  inquiries jsonb,
+  teacherIds jsonb,
+  highlighted boolean NOT NULL DEFAULT false,
+  CONSTRAINT events_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.teachers (
+  id bigint NOT NULL,
+  name text,
+  image text,
+  description text,
+  email text,
+  quote text,
+  gender text,
+  CONSTRAINT teachers_pkey PRIMARY KEY (id)
+);
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

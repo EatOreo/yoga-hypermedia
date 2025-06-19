@@ -1,5 +1,6 @@
 <template>
   <Background suntitle="Events">
+    <h2 class="text-dark text-2xl p-4 text-center"> Discover our upcoming workshops, retreats, and community events.</h2>
     <Selector :options="[
       { label: 'All Events', query: '' },
       { label: 'Workshops', query: 'workshop' },
@@ -14,13 +15,16 @@
 </template>
 
 <script lang="ts" setup>
+useSeoMeta({
+  title: 'Yogaga Events',
+  description: 'Discover our upcoming workshops, retreats, and community events at Yogaga. Join us to deepen your practice and connect with others.',
+});
+
 import { computed } from 'vue'
 import { useRoute } from 'vue-router';
-import api from '~/utils/api';
-import type { EventItem } from '~/utils/types/event-item';
 
 const route = useRoute();
 const selected = computed(() => (route.query.select as string) || '');
 
-const events = await api.getEvents();
+const events = await useApi().getEvents();
 </script>

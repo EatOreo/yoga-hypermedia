@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
     "@tailwindcss/cli": "^4.1.8",
+    "date-fns": "^4.1.0",
     "nuxt": "^3.17.4",
     "tailwindcss": "^4.1.8",
     "vue": "^3.5.15",
