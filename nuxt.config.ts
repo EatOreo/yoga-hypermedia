@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/yoga-hypermedia/',
+    buildAssetsDir: 'assets',
     head: {
       title: 'Yogaga',
       charset: 'utf-8',
