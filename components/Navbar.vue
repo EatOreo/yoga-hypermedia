@@ -7,6 +7,7 @@
       </div>
     </NuxtLink>
     <div class="flex flex-1 justify-end md:px-10">
+      <!-- normal navbar menu for large screens -->
       <div class="hidden md:flex items-center gap-8">
         <NuxtLink class="text-dark text-md font-medium" to="/">Home</NuxtLink>
         <NuxtLink class="text-dark text-md font-medium" to="/classes">Classes</NuxtLink>
@@ -16,6 +17,7 @@
         <NuxtLink class="text-dark text-md font-medium" to="/aboutus">About Us</NuxtLink>
         <NuxtLink class="text-dark text-md font-medium" to="/contacts">Contact Us</NuxtLink>
       </div>
+      <!-- burger menu for small screen -->
       <button class="md:hidden mr-4" @click="open = !open">
         <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
           <rect y="4" width="24" height="2" rx="1" fill="currentColor"/>
@@ -38,5 +40,5 @@
 
 <script setup>
 import { ref } from 'vue'
-const open = ref(false)
+const open = ref(false) // for small screensizes this controls whether the burger menu is open
 </script>

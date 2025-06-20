@@ -19,6 +19,7 @@
     </div>
   </NuxtLink>
 
+  <!-- if the size property = small it will be a smaller simplified card -->
   <NuxtLink v-else :to="`/events/${encodeURIComponent(event.title)}`" class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col gap-0 cursor-pointer transition-transform duration-200 hover:scale-102">
     <div
       class="w-full bg-center bg-no-repeat aspect-square bg-cover"

@@ -1,3 +1,4 @@
+// Class entity matching the table stored in the db
 export interface ClassItem {
   id: number
   title: string

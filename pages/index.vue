@@ -38,9 +38,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const show = ref(false)
-onMounted(() => {
-    show.value = true
-})
+    import { ref, onMounted } from 'vue'
+    const show = ref(false)
+    onMounted(() => {
+        show.value = true // for fading in the title
+    })
 </script>

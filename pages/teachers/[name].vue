@@ -42,6 +42,7 @@
           </div>
 
           <div class="py-4">
+            <!-- show the teachers either classes or events -->
             <div v-show="selectedTab === 'classes'">
               <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <ClassCard v-for="classItem in classes" :key="classItem.id" :title="classItem.title" :subtitle="classItem.subtitle" :image="classItem.image" />
@@ -72,8 +73,9 @@ const route = useRoute()
 const name = route.params.name as string
 
 const teacherItem = await api.getTeacherByName(name);
+// get teachers associated classes and events
 const classes = teacherItem ? await api.getClassesByTeacherId(teacherItem.id) : [];
 const events = teacherItem ? await api.getEventsByTeacherId(teacherItem.id) : [];
 
-const selectedTab = ref((classes && classes.length > 0) ? 'classes' : 'events');
+const selectedTab = ref((classes && classes.length > 0) ? 'classes' : 'events'); //if no classes start by showing events
 </script>

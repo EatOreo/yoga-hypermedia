@@ -20,7 +20,7 @@
 defineProps({
   suntitle: {
     type: String,
-    required: false,
+    required: false, // sun image is only showed if suntitle is given
     default: ''
   }
 })
