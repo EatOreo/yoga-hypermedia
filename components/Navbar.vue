@@ -1,5 +1,5 @@
 <template>
-  <header class="z-30 flex md:px-10 h-20 py-2 bg-2lgreen items-center">
+  <header class="z-30 flex md:px-10 h-20 py-2 bg-lgreen items-center">
     <NuxtLink to="/">
       <div class="md:pl-10 flex items-center text-dark cursor-pointer">
         <icon />

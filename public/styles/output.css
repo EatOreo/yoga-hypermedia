@@ -50,13 +50,12 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-dark: #1b1b1b;
-    --color-2lgreen: #8D9768;
-    --color-lgreen: #5c832f;
-    --color-lgrey: #f2f2f2;
-    --color-lblue: #007b8a;
-    --color-lorange: #d97706;
-    --color-bright: #ffffff;
+    --color-dark: #213315;
+    --color-lgreen: #8D9768;
+    --color-lgrey: #E7E4DA;
+    --color-lblue: #2A9D8A;
+    --color-lorange: #F0A436;
+    --color-bright: #FFFDF5;
   }
 }
 @layer base {
@@ -567,7 +566,7 @@
     border-color: var(--color-dark);
   }
   .border-dark\/20 {
-    border-color: color-mix(in srgb, #1b1b1b 20%, transparent);
+    border-color: color-mix(in srgb, #213315 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-dark) 20%, transparent);
     }
@@ -586,9 +585,6 @@
   }
   .border-t-\[\#dbdbdb\] {
     border-top-color: #dbdbdb;
-  }
-  .bg-2lgreen {
-    background-color: var(--color-2lgreen);
   }
   .bg-bright {
     background-color: var(--color-bright);
