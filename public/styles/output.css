@@ -51,7 +51,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-dark: #213315;
-    --color-lgreen: #A4AC86;
+    --color-lgreen: #8D9768;
     --color-lgrey: #E7E4DA;
     --color-lblue: #2A9D8A;
     --color-lorange: #F0A436;
@@ -332,6 +332,9 @@
   }
   .inline-block {
     display: inline-block;
+  }
+  .table {
+    display: table;
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
